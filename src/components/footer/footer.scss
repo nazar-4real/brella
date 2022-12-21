@@ -178,9 +178,15 @@
     display: flex;
   }
 
-  &__link-item + &__link-item {
-    margin-left: 9px;
+  &__link-item:first-child {
+    padding-right: 9px;
+  }
+
+  &__link-item:last-child {
     padding-left: 9px;
+  }
+
+  &__link-item + &__link-item {
     border-left: 1px solid $whiteColor;
   }
 

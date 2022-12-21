@@ -1,0 +1,387 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./fonts.scss";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body,
+#root,
+.app {
+  height: 100%;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  transition: background 0.5s;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+    background: $whiteColor;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $greenColor;
+    border-radius: 2px;
+  }
+
+  &[data-theme="dark"] {
+    background: $darkColor;
+
+    input,
+    textarea {
+      background: #222;
+      color: #fff;
+
+      &::placeholder {
+        color: inherit;
+      }
+    }
+
+    .main-title {
+      color: #469379;
+    }
+
+    .main-link {
+      background: #469379;
+    }
+
+    .modal {
+      &-dialog {
+        background: #222;
+      }
+    }
+  }
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+button {
+  background: transparent;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  @include insertFont("Raleway", 16px, 22px);
+  width: 100%;
+  border: 1px solid $greenColor;
+  border-radius: 5px;
+  padding: 15px 20px;
+  outline: none;
+  transition: all 0.3s;
+
+  &:focus {
+    box-shadow: 0 0 10px -1px $greenLightColor;
+    transform: scale(1.01);
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px 15px;
+  }
+}
+
+textarea {
+  resize: none;
+  min-height: 120px;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $greenColor;
+    border-radius: 5px;
+  }
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+.container {
+  max-width: 1230px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.nav-link {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  color: $greenColor;
+  transition: all 0.3s;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    color: $greenLightColor;
+  }
+
+  &.active-link {
+    border-color: $greenLightColor;
+    color: $greenLightColor;
+  }
+}
+
+.main-link {
+  @include insertFont("Raleway", 14px, 20px, bold);
+  padding: 10px 14px;
+  background: $greenLightColor;
+  color: $whiteColor;
+  border-radius: 6px;
+  transition: all 0.3s;
+  display: inline-grid;
+  place-items: center;
+  white-space: nowrap;
+
+  &:hover {
+    background: $greenColor;
+  }
+
+  @media (max-width: 768px) {
+    padding: 7px 12px;
+  }
+}
+
+.main-title {
+  @include insertFont("Roboto", 36px, 46px, bold);
+  color: $greenColor;
+  margin-bottom: 34px;
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+    line-height: 38px;
+    margin-bottom: 10px;
+  }
+}
+
+.main-text {
+  @include insertFont("Raleway", 18px, 30px);
+  letter-spacing: 0.02px;
+  color: $grayColor;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.section-subtitle {
+  @include insertFont("Raleway", 13px, 20px);
+  color: $greenColor;
+  text-transform: uppercase;
+  letter-spacing: 0.05px;
+  margin-bottom: 20px;
+}
+
+.section-link {
+  @include insertFont("Raleway", 18px, 18px, 700);
+  letter-spacing: 0.02px;
+  color: $greenColor;
+  margin-top: 24px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid $greenColor;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $greenLightColor;
+    border-color: $greenLightColor;
+  }
+}
+
+// Modal
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100vh;
+  background: rgba($blackColor, 0.7);
+  display: grid;
+  place-items: center;
+
+  &-dialog {
+    background: $whiteColor;
+    padding: 40px;
+    max-width: 40%;
+    width: 100%;
+    position: relative;
+    border-radius: 5px;
+
+    @media (max-width: 991px) {
+      max-width: 60%;
+    }
+
+    @media (max-width: 768px) {
+      max-width: 90%;
+      padding: 30px;
+      margin-top: -10vh;
+    }
+  }
+
+  .main-title {
+    margin-bottom: 20px;
+
+    @media (max-width: 991px) {
+      font-size: 30px;
+      line-height: 35px;
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+
+    &-label {
+      margin-bottom: 15px;
+
+      @media (max-width: 768px) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .main-link {
+    height: 54px;
+
+    @media (max-width: 768px) {
+      height: unset;
+    }
+  }
+
+  &-close {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    @media (max-width: 768px) {
+      width: 25px;
+      height: 25px;
+      top: 10px;
+      right: 10px;
+    }
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 20;
+      width: 100%;
+      height: 2px;
+      background: $greenColor;
+      border-radius: 40%;
+    }
+
+    span:first-child {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    span:last-child {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}
+
+// To top button
+
+.totop-btn {
+  position: fixed;
+  bottom: 70px;
+  right: 70px;
+  z-index: 100;
+  width: 50px;
+  height: 50px;
+  border: 1px solid $greenLightColor;
+  background: $whiteColor;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: $whiteColor;
+  font-size: 20px;
+  transition: all 0.3s;
+
+  @media (max-width: 991px) {
+    bottom: 40px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__icon {
+    transform: rotate(-90deg);
+    width: 40%;
+    height: 40%;
+    object-fit: contain;
+  }
+}
+
+.section {
+  padding: 90px 0;
+}
+
+.page-404 {
+  padding: 30px 0;
+
+  &__body {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &__body > * {
+    flex: 1;
+  }
+
+  &__img {
+    max-width: 50%;
+    margin-right: 40px;
+  }
+
+  &__title {
+    padding-bottom: 15px;
+    display: inline-block;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $greenLightColor;
+    color: $greenLightColor;
+  }
+
+  &__title p {
+    font-size: 200px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+}

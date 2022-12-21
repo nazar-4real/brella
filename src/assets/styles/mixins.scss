@@ -1,0 +1,8 @@
+// Font insertion
+
+@mixin insertFont($fontName, $fontSize, $lineHeight, $fontWeight: 400) {
+  font-family: $fontName;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+}

@@ -1,0 +1,157 @@
+@import "../../assets/styles/variables.scss";
+@import "../../assets/styles/mixins.scss";
+
+.benefits {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &::before {
+    left: 0;
+    background: $greenLighterColor;
+  }
+
+  &::after {
+    right: 0;
+    background: $greenColor;
+  }
+
+  &__body {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__info,
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: 50%;
+    width: 100%;
+  }
+
+  &__info {
+    padding-right: 115px;
+  }
+
+  .main-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 24px;
+      height: 18px;
+      background: url(../../assets/images/arrow.svg) center / contain no-repeat;
+      margin-left: 30px;
+    }
+  }
+
+  &__list-item {
+    overflow: hidden;
+  }
+
+  &__list-item + &__list-item {
+    margin-top: 18px;
+  }
+
+  &__list-link {
+    @include insertFont("Roboto", 32px, 42px);
+    color: $greenLightColor;
+    transition: all 0.5s;
+    position: relative;
+    padding-left: 25px;
+    transform: translateX(-25px);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      border: 7px solid transparent;
+      border-right: none;
+      border-left: 15px solid $greenLightColor;
+    }
+
+    &:hover {
+      transform: translateX(0);
+    }
+  }
+
+  svg {
+    align-self: center;
+  }
+
+  &__content {
+    padding: 40px 0 0 115px;
+    margin-left: auto;
+  }
+
+  &__text {
+    p {
+      @include insertFont("Raleway", 20px, 34px);
+      color: $whiteColor;
+    }
+
+    p + p {
+      margin-top: 34px;
+    }
+  }
+}
+
+// Media
+
+@media (max-width: 991px) {
+  .benefits {
+    padding: 60px 0;
+
+    &__info {
+      padding-right: 60px;
+    }
+
+    &__content {
+      padding-left: 60px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits {
+    padding: 0;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    &__body {
+      flex-direction: column;
+      margin: 0 -15px;
+    }
+
+    &__info,
+    &__content {
+      max-width: 100%;
+      padding: 60px 15px;
+    }
+
+    &__info {
+      background: $greenLighterColor;
+    }
+
+    &__content {
+      background: $greenColor;
+      border-bottom: 1px solid $greenLighterColor;
+    }
+  }
+}

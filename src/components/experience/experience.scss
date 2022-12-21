@@ -1,0 +1,55 @@
+@import "../../assets/styles/variables.scss";
+@import "../../assets/styles/mixins.scss";
+
+.experience {
+  padding-bottom: 0;
+  border-bottom: 1px solid $greenLighterColor;
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__img,
+  &__info {
+    max-width: 50%;
+    width: 100%;
+  }
+
+  &__img-pic {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  &__info {
+    margin-top: 68px;
+    max-width: 45%;
+  }
+}
+
+
+// Media 
+
+@media (max-width: 768px) {
+  .experience {
+    padding: 20px 0 0;
+    border: none;
+
+    &__body {
+      flex-direction: column;
+    }
+
+    &__img,
+    &__info {
+      max-width: 100%;
+    }
+
+    &__img {
+      border-bottom: 1px solid #e3eeed;
+    }
+
+    &__info {
+      margin-top: 40px;
+    }
+  }
+}

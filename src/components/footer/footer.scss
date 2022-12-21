@@ -1,0 +1,252 @@
+@import "../../assets/styles/variables.scss";
+@import "../../assets/styles/mixins.scss";
+
+.footer {
+  padding: 100px 0 50px;
+  background: $greenColor;
+  color: $whiteColor;
+  @include insertFont("Raleway", 14px, 24px);
+  letter-spacing: 0.02px;
+
+  .section {
+    padding: 0;
+  }
+
+  &-basis {
+    &__body {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding-bottom: 74px;
+      border-bottom: 1px solid $whiteColor;
+    }
+
+    &__column:not(:last-of-type) {
+      margin-left: 105px;
+    }
+
+    &__column:last-of-type {
+      margin-left: auto;
+    }
+
+    &__column-title {
+      @include insertFont("Raleway", 13px, 24px, 700);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+  }
+
+  &-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &-nav__link {
+    @include insertFont("Raleway", 16px, 27px);
+    color: $whiteColor;
+    transition: all 0.3s;
+    border-bottom: 1px solid transparent;
+  }
+
+  &-nav__link:hover,
+  &-nav__link.active-link {
+    border-color: $whiteColor;
+  }
+
+  &-nav__link + &-nav__link {
+    margin-top: 15px;
+  }
+
+  &-basis__column:last-of-type {
+    max-width: 355px;
+  }
+
+  &-text {
+    letter-spacing: 0.02px;
+    margin-bottom: 16px;
+  }
+
+  .form {
+    display: flex;
+    height: 52px;
+    border: 1px solid $whiteColor;
+
+    &-label {
+      display: inline-block;
+      flex-grow: 1;
+    }
+
+    &-input {
+      height: 100%;
+      width: 100%;
+      border: none;
+      background: transparent;
+      padding: 0 21px;
+      color: $whiteColor;
+      @include insertFont("Raleway", 14px, 24px);
+
+      &::placeholder {
+        color: $whiteColor;
+      }
+    }
+
+    &-submit {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      background: $whiteColor;
+      position: relative;
+    }
+
+    &-icon {
+      width: 19px;
+      height: 13px;
+      object-fit: contain;
+    }
+  }
+
+  .social {
+    display: flex;
+    margin-top: 30px;
+
+    &__link {
+      width: 26px;
+      height: 26px;
+    }
+
+    &__link + .social__link {
+      margin-left: 25px;
+    }
+
+    &__link:hover {
+      &.linkedin path {
+        fill: #0a66c2;
+      }
+
+      &.twitter path {
+        fill: #1da1f2;
+      }
+
+      &.youtube path:first-child {
+        fill: #ff0000;
+      }
+
+      &.youtube path:last-child {
+        fill: #fff;
+      }
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    path {
+      transition: all 0.3s;
+    }
+  }
+
+  .privacy {
+    margin-top: 73px;
+
+    &__text p + p {
+      margin-top: 20px;
+    }
+  }
+}
+
+.copyright {
+  margin-top: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__text a {
+    color: $yellowColor;
+    font-weight: 700;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $greenLightColor;
+    }
+  }
+
+  &__links {
+    display: flex;
+  }
+
+  &__link-item + &__link-item {
+    margin-left: 9px;
+    padding-left: 9px;
+    border-left: 1px solid $whiteColor;
+  }
+
+  &__link {
+    color: inherit;
+    transition: all 0.3s;
+    border-bottom: 1px solid transparent;
+  }
+
+  &__link:hover {
+    border-color: $whiteColor;
+  }
+}
+
+// Media
+
+@media (max-width: 991px) {
+  .footer {
+    padding: 60px 0 30px;
+
+    &-basis__body {
+      flex-direction: column;
+      padding-bottom: 45px;
+    }
+
+    &-basis__column {
+      margin: 30px 0 0 !important;
+    }
+
+    &-basis__column:last-of-type {
+      max-width: 100%;
+    }
+
+    &-basis__column-title {
+      margin-bottom: 10px;
+    }
+
+    &-nav__link + &-nav__link {
+      margin-top: 10px;
+    }
+
+    .privacy {
+      margin-top: 45px;
+    }
+
+    .copyright {
+      margin-top: 60px;
+      flex-direction: column;
+
+      &__text {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      &__links {
+        width: 100%;
+      }
+
+      &__link-item {
+        max-width: 50%;
+        width: 100%;
+      }
+
+      &__link-item:first-child {
+        text-align: right;
+      }
+    }
+  }
+}

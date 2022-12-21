@@ -1,0 +1,29 @@
+@import "./mixins.scss";
+
+// Import fonts
+@mixin importFont($fontName, $fontWeightPath, $fontWeight) {
+  font-family: $fontName;
+  src: url("../fonts/#{$fontName}/#{$fontName}-#{$fontWeightPath}.ttf");
+  font-weight: $fontWeight;
+  font-display: swap;
+}
+
+// Roboto
+
+@font-face {
+  @include importFont("Roboto", "Regular", 400);
+}
+
+@font-face {
+  @include importFont("Roboto", "Bold", 700);
+}
+
+// Raleway
+
+@font-face {
+  @include importFont("Raleway", "Regular", 400);
+}
+
+@font-face {
+  @include importFont("Raleway", "Bold", 700);
+}

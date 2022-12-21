@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9f61c1f4.css",
+    "main.js": "/static/js/main.be626b12.js",
+    "static/media/error-404.jpg": "/static/media/error-404.291c471e5ac5782df46c.jpg",
+    "static/media/explore-img.jpg": "/static/media/explore-img.46bda334d8b831f40cf0.jpg",
+    "static/media/employers-img.jpg": "/static/media/employers-img.038c9909f26e49262af7.jpg",
+    "static/media/Roboto-Regular.ttf": "/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
+    "static/media/Roboto-Bold.ttf": "/static/media/Roboto-Bold.f80816a5455d171f948d.ttf",
+    "static/media/Raleway-Regular.ttf": "/static/media/Raleway-Regular.9ade142e81dd8d55cd32.ttf",
+    "static/media/Raleway-Bold.ttf": "/static/media/Raleway-Bold.d1a96e2aa6257c864d4d.ttf",
+    "static/media/error.gif": "/static/media/error.7725c6cd341380a10a1c.gif",
+    "static/media/blog-card-3.jpg": "/static/media/blog-card-3.c065413945c224579e63.jpg",
+    "static/media/hero-bg.jpg": "/static/media/hero-bg.21a9defb5ec6ff5ef596.jpg",
+    "static/media/experience-img.png": "/static/media/experience-img.0e5a22219da97f32e121.png",
+    "static/media/blog-card-2.jpg": "/static/media/blog-card-2.42d700648f844b883c34.jpg",
+    "static/media/blog-card-1.jpg": "/static/media/blog-card-1.ed4595534ee6ac654dc2.jpg",
+    "static/media/hero-benefit-icon-1.svg": "/static/media/hero-benefit-icon-1.ffc2ac7736f63d603a5de31bfd2c76ae.svg",
+    "static/media/hero-benefit-icon-3.svg": "/static/media/hero-benefit-icon-3.89bab915c5aa415faa1d5a3de1bb6514.svg",
+    "static/media/plan-img.svg": "/static/media/plan-img.ab50a0a4033c1df56d74dea78498842d.svg",
+    "static/media/hero-benefit-icon-2.svg": "/static/media/hero-benefit-icon-2.1c4d9991d1c38dd9747a88b67166a2a9.svg",
+    "static/media/about-chart.png": "/static/media/about-chart.0edecf72730d5bfecc68.png",
+    "static/media/logo.svg": "/static/media/logo.986df37506a09e48adca231fcd577e81.svg",
+    "static/media/logo-white.svg": "/static/media/logo-white.558a0c09333316b22c36d50623a969fe.svg",
+    "static/media/linkedin.svg": "/static/media/linkedin.38624d1642fcb76d10428b83b7daa86a.svg",
+    "static/media/twitter.svg": "/static/media/twitter.9ef7de0ed2091ad1f30dff98316e928d.svg",
+    "static/media/youtube.svg": "/static/media/youtube.14f13aa5285db32038f023945183cd64.svg",
+    "index.html": "/index.html",
+    "static/media/arrow-right.svg": "/static/media/arrow-right.6c3ba8fd97e588bf564aedbcfa6cd0ee.svg",
+    "static/media/arrow.svg": "/static/media/arrow.865cef3363f16de0cdd968f014e21665.svg",
+    "static/media/arrow-left.svg": "/static/media/arrow-left.187e7d318a39f1a7f5a40ccfcfbfbfb5.svg",
+    "main.9f61c1f4.css.map": "/static/css/main.9f61c1f4.css.map",
+    "main.be626b12.js.map": "/static/js/main.be626b12.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9f61c1f4.css",
+    "static/js/main.be626b12.js"
+  ]
+}

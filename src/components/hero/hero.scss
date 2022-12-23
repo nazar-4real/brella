@@ -3,7 +3,7 @@
 
 .hero {
   padding-top: 140px;
-  height: 100vh;
+  height: 700px;
   background: url("../../assets/images/hero/hero-bg.jpg") center / cover
     no-repeat;
   position: relative;
@@ -123,7 +123,7 @@
 @media (max-width: 768px) {
   .hero {
     padding-top: 70px;
-    height: 90vh;
+    height: 600px;
 
     &__info {
       max-width: 100%;

@@ -130,6 +130,10 @@ textarea {
   margin: 0 auto;
 }
 
+.section {
+  padding: 90px 0;
+}
+
 .nav-link {
   font-size: 14px;
   line-height: 20px;
@@ -345,9 +349,7 @@ textarea {
   }
 }
 
-.section {
-  padding: 90px 0;
-}
+// Page 404
 
 .page-404 {
   padding: 30px 0;
@@ -356,6 +358,10 @@ textarea {
     display: flex;
     align-items: center;
     position: relative;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   &__body > * {
@@ -365,6 +371,12 @@ textarea {
   &__img {
     max-width: 50%;
     margin-right: 40px;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+      width: 100%;
+      margin: 0;
+    }
   }
 
   &__title {
@@ -383,5 +395,16 @@ textarea {
     display: flex;
     align-items: center;
     gap: 30px;
+  }
+
+  @media (max-width: 768px) {
+    &__info {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    &__actions {
+      justify-content: center;
+    }
   }
 }

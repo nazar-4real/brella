@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper';
+import { Navigation, Autoplay } from 'swiper';
 
 import Section from '../Shared/Section';
 
@@ -61,13 +61,13 @@ const slidesData = [
 
 const Pride = () => {
   const [swiper, setSwiper] = useState();
-  const prevRef = useRef();
-  const nextRef = useRef();
+  const prevElRef = useRef();
+  const nextElRef = useRef();
 
   useEffect(() => {
     if (swiper) {
-      swiper.params.navigation.prevEl = prevRef.current;
-      swiper.params.navigation.nextEl = nextRef.current;
+      swiper.params.navigation.prevEl = prevElRef?.current;
+      swiper.params.navigation.nextEl = nextElRef?.current;
       swiper.navigation.init();
       swiper.navigation.update();
     }
@@ -89,19 +89,19 @@ const Pride = () => {
         Proudly backed by
       </h2>
       <div className="pride__slider">
-        <button className="swiper-btn swiper-prev" ref={prevRef}>
+        <button className="swiper-btn swiper-prev" ref={prevElRef}>
           <img src={prevArrow} alt="" />
         </button>
         <Swiper
           slidesPerView={5}
           spaceBetween={30}
-          modules={[Navigation]}
-          navigation={{
-            prevEl: prevRef?.current,
-            nextEl: nextRef?.current
-          }}
+          modules={[Navigation, Autoplay]}
           onSwiper={setSwiper}
           loop
+          speed={500}
+          autoplay={{
+            delay: 1500
+          }}
           centeredSlides
           breakpoints={{
             991: {
@@ -123,11 +123,11 @@ const Pride = () => {
         >
           {slides}
         </Swiper>
-        <button className="swiper-btn swiper-next" ref={nextRef}>
+        <button className="swiper-btn swiper-next" ref={nextElRef}>
           <img src={nextArrow} alt="" />
         </button>
       </div>
-    </Section>
+    </Section >
   );
 };
 

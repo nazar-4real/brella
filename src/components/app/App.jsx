@@ -12,8 +12,6 @@ import Employers from '../employers/Employers';
 import Blog from '../blog/Blog';
 import Page404 from '../Shared/Page404';
 
-import ErrorBoundary from '../errorBoundary/ErrorBoudary';
-
 import '../../assets/styles/global.scss';
 
 const App = () => {
@@ -30,20 +28,18 @@ const App = () => {
 
       <div className="app">
         <Router>
-          <ErrorBoundary>
-            <Routes>
-              <Route path='/' element={<Layout />}>
-                <Route index element={<Hero />} />
-                <Route path='plan' element={<Plan />} />
-                <Route path='employers' element={<Employers />} />
-                <Route path='benefits' element={<Benefits />} />
-                <Route path='experience' element={<Experience />} />
-                <Route path='explore' element={<Explore />} />
-                <Route path='blog' element={<Blog />} />
-                <Route path='*' element={<Page404 />} />
-              </Route>
-            </Routes>
-          </ErrorBoundary>
+          <Routes>
+            <Route path='/' element={<Layout />}>
+              <Route index element={<Hero />} />
+              <Route path='plan' element={<Plan />} />
+              <Route path='employers' element={<Employers />} />
+              <Route path='benefits' element={<Benefits />} />
+              <Route path='experience' element={<Experience />} />
+              <Route path='explore' element={<Explore />} />
+              <Route path='blog' element={<Blog />} />
+              <Route path='*' element={<Page404 />} />
+            </Route>
+          </Routes>
         </Router>
       </div>
     </>

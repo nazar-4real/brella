@@ -6,6 +6,8 @@ import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import ToTopBtn from "./Shared/ToTopBtn";
 
+import ErrorBoundary from "./Shared/ErrorBoundary";
+
 const Layout = () => {
   const [modal, setModal] = useState(false);
   const location = useLocation();;
@@ -18,7 +20,7 @@ const Layout = () => {
   }, [location])
 
   return (
-    <>
+    <ErrorBoundary>
       <Header setModal={setModal} />
 
       <main className="main">
@@ -30,7 +32,7 @@ const Layout = () => {
       <Modal isOpen={modal} setModal={setModal} />
 
       <ToTopBtn />
-    </>
+    </ErrorBoundary>
   )
 }
 

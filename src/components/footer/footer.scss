@@ -109,11 +109,14 @@
 
   .social {
     display: flex;
+    align-items: center;
     margin-top: 30px;
 
     &__link {
       width: 26px;
       height: 26px;
+      display: flex;
+      align-items: center;
     }
 
     &__link + .social__link {
@@ -140,7 +143,6 @@
 
     svg {
       width: 100%;
-      height: 100%;
       object-fit: contain;
     }
 

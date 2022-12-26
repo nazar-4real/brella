@@ -35,7 +35,7 @@ const FooterBasis = () => {
 
   const socialIcons = [
     {
-      socialIcon: < Linkedin />,
+      socialIcon: <Linkedin />,
       socialName: 'linkedin'
     },
     {
@@ -82,7 +82,7 @@ const FooterBasis = () => {
     return (
       <a
         className={`social__link ${name}`}
-        href="/#"
+        href="/"
         key={i}>
         {icon}
       </a>

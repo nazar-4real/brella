@@ -1,8 +1,11 @@
 import errorImg from '../../assets/images/error.gif';
 
 const styles = {
-  margin: '0 auto',
-  display: 'block'
+  display: 'block',
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)'
 }
 
 const Error = () => {

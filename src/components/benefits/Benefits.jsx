@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import Section from '../Shared/Section';
 import SectionInfo from '../Shared/SectionInfo';
@@ -31,11 +32,11 @@ const Benefits = () => {
       <li
         className="benefits__list-item"
         key={id}>
-        <a
+        <Link
           className="benefits__list-link"
-          href={website}>
+          to={website}>
           {name}
-        </a>
+        </Link>
       </li >
     )
   });

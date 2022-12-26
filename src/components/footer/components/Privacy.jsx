@@ -54,7 +54,7 @@ const Privacy = () => {
           © {date} Brella Insurance Inc. All Rights Reserved.
           <br />
           Developed by <a href="https://github.com/nazar-4real" target="_blank" rel="noreferrer noopener">
-            Nazar Marusyk
+            nazar-4real
           </a>
         </p>
         <ul className="copyright__links">

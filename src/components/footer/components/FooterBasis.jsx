@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+
 import { NavLink, useNavigate } from 'react-router-dom';
 
 import Logo from '../../Shared/Logo';
@@ -9,7 +11,6 @@ import formArrow from '../../../assets/images/arrow.svg';
 import { ReactComponent as Linkedin } from '../../../assets/images/social/linkedin.svg';
 import { ReactComponent as Twitter } from '../../../assets/images/social/twitter.svg';
 import { ReactComponent as Youtube } from '../../../assets/images/social/youtube.svg';
-import { useRef } from 'react';
 
 const FooterBasis = () => {
   const menuData = [
@@ -93,7 +94,7 @@ const FooterBasis = () => {
   const navigate = useNavigate();
   const inputRef = useRef();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
 
     inputRef.current.value = '';

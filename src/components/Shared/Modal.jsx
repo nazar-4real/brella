@@ -44,7 +44,7 @@ const Modal = ({ isOpen, setModal }) => {
               <FormField
                 name="name"
                 placeholder="Enter your name..."
-                inputRef={inputRef} />
+                ref={inputRef} />
               <FormField
                 type="email"
                 name="email"

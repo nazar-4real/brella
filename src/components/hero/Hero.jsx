@@ -1,3 +1,6 @@
+import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import About from '../about/About';
 
 import Section from '../Shared/Section';
@@ -53,6 +56,16 @@ const Hero = () => {
     )
   });
 
+  const navigate = useNavigate();
+  const inputRef = useRef();
+
+  const handleSearch = e => {
+    e.preventDefault();
+
+    inputRef.current.value = '';
+    navigate('/confirmed');
+  }
+
   return (
     <>
       <Section className="hero">
@@ -63,10 +76,11 @@ const Hero = () => {
           <p className="hero__text">
             I'm wondering...
           </p>
-          <form className="form">
+          <form className="form" onSubmit={handleSearch}>
             <FormField
               placeholder="how Brella's plan works"
-              name="search" />
+              name="search"
+              ref={inputRef} />
             <button
               className="main-link"
               type="submit">

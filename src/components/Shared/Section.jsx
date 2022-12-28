@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Section = ({ className, isContainer = true, children }) => (
-  <section className={`section ${className}`}>
+const Section = ({ className, isContainer = true, children, style }) => (
+  <section className={`section ${className}`} style={style}>
     {
       isContainer ? (
         <div className="container">

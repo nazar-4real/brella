@@ -11,6 +11,7 @@ import Experience from '../experience/Experience';
 import Employers from '../employers/Employers';
 import Blog from '../blog/Blog';
 import Page404 from '../Shared/Page404';
+import Confirmed from '../Shared/Confirmed';
 
 import ErrorBoundary from '../Shared/ErrorBoundary';
 
@@ -49,6 +50,7 @@ const App = () => {
                   <Route path='experience' element={<Experience />} />
                   <Route path='explore' element={<Explore />} />
                   <Route path='blog' element={<Blog />} />
+                  <Route path='confirmed' element={<Confirmed />} />
                   <Route path='*' element={<Page404 />} />
                 </Route>
               </Routes>

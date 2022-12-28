@@ -1,5 +1,6 @@
+import { forwardRef } from "react";
 
-const FormField = ({ type = 'text', name, placeholder, inputRef = null }) => (
+const FormField = forwardRef(({ type = 'text', name, placeholder }, inputRef) => (
   <label className="form-label">
     <input
       className="form-input"
@@ -10,6 +11,6 @@ const FormField = ({ type = 'text', name, placeholder, inputRef = null }) => (
       required
     />
   </label>
-)
+))
 
 export default FormField;

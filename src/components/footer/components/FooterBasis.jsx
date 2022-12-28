@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 import Logo from '../../Shared/Logo';
 import Section from '../../Shared/Section';
@@ -9,6 +9,7 @@ import formArrow from '../../../assets/images/arrow.svg';
 import { ReactComponent as Linkedin } from '../../../assets/images/social/linkedin.svg';
 import { ReactComponent as Twitter } from '../../../assets/images/social/twitter.svg';
 import { ReactComponent as Youtube } from '../../../assets/images/social/youtube.svg';
+import { useRef } from 'react';
 
 const FooterBasis = () => {
   const menuData = [
@@ -89,6 +90,16 @@ const FooterBasis = () => {
     )
   });
 
+  const navigate = useNavigate();
+  const inputRef = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    inputRef.current.value = '';
+    navigate('/confirmed');
+  }
+
   return (
     <Section className="footer-basis">
       <Logo srcPath={logo} />
@@ -100,10 +111,11 @@ const FooterBasis = () => {
         <p className="footer-text">
           Sign up to receive benefits news and insights in your inbox once a month.
         </p>
-        <form className="form">
+        <form className="form" onSubmit={handleSubmit}>
           <FormField
             name="search"
-            placeholder="Email *" />
+            placeholder="Email *"
+            ref={inputRef} />
           <button
             className="form-submit"
             type="submit">

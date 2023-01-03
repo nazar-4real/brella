@@ -1,3 +1,5 @@
+import CustomHelmet from '../Shared/CustomHelmet';
+
 import Pride from '../pride/Pride';
 
 import Section from '../Shared/Section';
@@ -10,6 +12,8 @@ import experienceImg from '../../assets/images/experience/experience-img.png';
 
 const Experience = () => (
   <>
+    <CustomHelmet title="Members" />
+
     <Section className="experience">
       <div className="experience__img">
         <img className="experience__img-pic" src={experienceImg} alt="" />
@@ -24,7 +28,7 @@ const Experience = () => (
         <SectionLink text="Play video" />
       </SectionInfo>
     </Section>
-    
+
     <Pride />
   </>
 )

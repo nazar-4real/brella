@@ -1,5 +1,4 @@
 import { Component } from "react";
-
 import Error from '../Shared/Error';
 
 class ErrorBoundary extends Component {
@@ -19,19 +18,14 @@ class ErrorBoundary extends Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    this.setState((state) => ({
-      ...state,
+    this.setState({
       error,
-      errorInfo: errorInfo.componentStack
-    }))
+      errorInfo
+    })
   }
 
   render() {
-    if (this.state.hasError) {
-      return <Error />
-    }
-
-    return this.props.children;
+    return (this.state.hasError && <Error />) || this.props.children;
   }
 }
 

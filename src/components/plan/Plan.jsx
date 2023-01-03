@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import CustomHelmet from '../Shared/CustomHelmet';
 
 import Section from '../Shared/Section';
 import SectionInfo from '../Shared/SectionInfo';
@@ -42,22 +43,26 @@ const Plan = () => {
   });
 
   return (
-    <Section className="plan">
-      <SectionInfo
-        className="plan__info"
-        subtitle="one plan, more coverage"
-        title="No one can predict which health issues might come their way.">
-        <p className="main-text">
-          Our broad supplemental coverage gets rid of the guesswork and puts cash in your team’s pockets for most conditions that require urgent medical attention.
-        </p>
-      </SectionInfo>
-      <div className="plan__img">
-        <img className="plan__img-pic" src={planImg} alt="" />
-      </div>
-      <div className="plan__cards">
-        {loading ? <Spinner /> : planCards}
-      </div>
-    </Section>
+    <>
+      <CustomHelmet title="Our Plan" />
+
+      <Section className="plan">
+        <SectionInfo
+          className="plan__info"
+          subtitle="one plan, more coverage"
+          title="No one can predict which health issues might come their way.">
+          <p className="main-text">
+            Our broad supplemental coverage gets rid of the guesswork and puts cash in your team’s pockets for most conditions that require urgent medical attention.
+          </p>
+        </SectionInfo>
+        <div className="plan__img">
+          <img className="plan__img-pic" src={planImg} alt="" />
+        </div>
+        <div className="plan__cards">
+          {loading ? <Spinner /> : planCards}
+        </div>
+      </Section>
+    </>
   );
 }
 

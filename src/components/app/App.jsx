@@ -17,14 +17,6 @@ import ErrorBoundary from '../Shared/ErrorBoundary';
 
 import '../../assets/styles/global.scss';
 
-import AppContext from '../../context/AppContext';
-
-const contextValue = {
-  darkTheme: 'dark',
-  lightTheme: 'light',
-  system: 'SYSTEM_THEME'
-}
-
 const App = () => {
   console.log("%cBrella business card application", "font-size: 14px; color: darkcyan;");
 
@@ -34,11 +26,9 @@ const App = () => {
         <meta charset="utf-8" />
         <meta name="description" content="Brella application" />
         <link rel="icon" href={`${process.env.PUBLIC_URL}/favicon.svg`} />
-        <title>Brella</title>
       </Helmet>
 
       <div className="app">
-        <AppContext.Provider value={contextValue}>
           <ErrorBoundary>
             <Router>
               <Routes>
@@ -56,7 +46,6 @@ const App = () => {
               </Routes>
             </Router>
           </ErrorBoundary>
-        </AppContext.Provider>
       </div>
     </>
   );

@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import CustomHelmet from '../Shared/CustomHelmet';
 
 import About from '../about/About';
 
@@ -68,6 +69,8 @@ const Hero = () => {
 
   return (
     <>
+      <CustomHelmet title="Brella" />
+
       <Section className="hero">
         <SectionInfo
           className="hero__info"

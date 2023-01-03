@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import CustomHelmet from '../Shared/CustomHelmet';
 
 import Section from '../Shared/Section';
 
@@ -53,11 +54,15 @@ const Blog = () => {
   });
 
   return (
-    <Section className="blog">
-      <div className="blog__cards">
-        {loading ? <Spinner /> : articlesCards}
-      </div>
-    </Section>
+    <>
+      <CustomHelmet title="Blog" />
+
+      <Section className="blog">
+        <div className="blog__cards">
+          {loading ? <Spinner /> : articlesCards}
+        </div>
+      </Section>
+    </>
   );
 };
 

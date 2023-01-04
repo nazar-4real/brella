@@ -1,16 +1,17 @@
-import { useRef } from 'react';
+import { useForm } from 'react-hook-form';
 
 import { NavLink, useNavigate } from 'react-router-dom';
 
 import Logo from '../../Shared/Logo';
 import Section from '../../Shared/Section';
-import FormField from '../../Shared/FormField';
 
 import logo from '../../../assets/images/logo-white.svg';
 import formArrow from '../../../assets/images/arrow.svg';
 import { ReactComponent as Linkedin } from '../../../assets/images/social/linkedin.svg';
 import { ReactComponent as Twitter } from '../../../assets/images/social/twitter.svg';
 import { ReactComponent as Youtube } from '../../../assets/images/social/youtube.svg';
+
+import { InputError } from '../../hero/Hero';
 
 const FooterBasis = () => {
   const menuData = [
@@ -92,13 +93,12 @@ const FooterBasis = () => {
   });
 
   const navigate = useNavigate();
-  const inputRef = useRef();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-  const handleSubmit = e => {
-    e.preventDefault();
-
-    inputRef.current.value = '';
+  const onSubmitForm = data => {
     navigate('/confirmed');
+    console.log(JSON.stringify(data));
+    reset();
   }
 
   return (
@@ -112,11 +112,18 @@ const FooterBasis = () => {
         <p className="footer-text">
           Sign up to receive benefits news and insights in your inbox once a month.
         </p>
-        <form className="form" onSubmit={handleSubmit}>
-          <FormField
-            name="search"
-            placeholder="Email *"
-            ref={inputRef} />
+        <form className="form" onSubmit={handleSubmit(onSubmitForm)}>
+          <label className="form-label">
+            <input
+              className="form-input"
+              placeholder="Email*"
+              {...register('footerEmail', {
+                required: !0,
+                minLength: 5
+              })}
+            />
+            {errors.footerEmail && <InputError>This field is required</InputError>}
+          </label>
           <button
             className="form-submit"
             type="submit">

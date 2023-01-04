@@ -29,23 +29,23 @@ const App = () => {
       </Helmet>
 
       <div className="app">
-          <ErrorBoundary>
-            <Router>
-              <Routes>
-                <Route path='/' element={<Layout />}>
-                  <Route index element={<Hero />} />
-                  <Route path='plan' element={<Plan />} />
-                  <Route path='employers' element={<Employers />} />
-                  <Route path='benefits' element={<Benefits />} />
-                  <Route path='experience' element={<Experience />} />
-                  <Route path='explore' element={<Explore />} />
-                  <Route path='blog' element={<Blog />} />
-                  <Route path='confirmed' element={<Confirmed />} />
-                  <Route path='*' element={<Page404 />} />
-                </Route>
-              </Routes>
-            </Router>
-          </ErrorBoundary>
+        <ErrorBoundary>
+          <Router>
+            <Routes>
+              <Route path='/' element={<Layout />}>
+                <Route index element={<Hero />} />
+                <Route path='plan' element={<Plan />} />
+                <Route path='employers' element={<Employers />} />
+                <Route path='benefits' element={<Benefits />} />
+                <Route path='experience' element={<Experience />} />
+                <Route path='explore' element={<Explore />} />
+                <Route path='blog' element={<Blog />} />
+                <Route path='confirmed' element={<Confirmed />} />
+                <Route path='*' element={<Page404 />} />
+              </Route>
+            </Routes>
+          </Router>
+        </ErrorBoundary>
       </div>
     </>
   );

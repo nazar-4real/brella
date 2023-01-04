@@ -1,18 +1,26 @@
-import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+
 import CustomHelmet from '../Shared/CustomHelmet';
 
 import About from '../about/About';
 
 import Section from '../Shared/Section';
 import SectionInfo from '../Shared/SectionInfo';
-import FormField from '../Shared/FormField';
 
 import './hero.scss';
+import styled from 'styled-components';
 
 import benefitIcon1 from '../../assets/images/hero/hero-benefit-icon-1.svg';
 import benefitIcon2 from '../../assets/images/hero/hero-benefit-icon-2.svg';
 import benefitIcon3 from '../../assets/images/hero/hero-benefit-icon-3.svg';
+
+export const InputError = styled.span`
+  font-size: 12px;
+  font-weight: 600;
+  color: crimson;
+  margin: 5px 0 0 17px;
+`;
 
 const Hero = () => {
 
@@ -58,13 +66,12 @@ const Hero = () => {
   });
 
   const navigate = useNavigate();
-  const inputRef = useRef();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-  const handleSearch = e => {
-    e.preventDefault();
-
-    inputRef.current.value = '';
+  const onSubmitForm = data => {
     navigate('/confirmed');
+    console.log(JSON.stringify(data));
+    reset();
   }
 
   return (
@@ -79,14 +86,21 @@ const Hero = () => {
           <p className="hero__text">
             I'm wondering...
           </p>
-          <form className="form" onSubmit={handleSearch}>
-            <FormField
-              placeholder="how Brella's plan works"
-              name="search"
-              ref={inputRef} />
+          <form className="form" onSubmit={handleSubmit(onSubmitForm)}>
+            <label className="form-label">
+              <input
+                className="form-input"
+                placeholder="Enter your request"
+                {...register('heroSearch', {
+                  required: !0
+                })}
+              />
+              {errors.heroSearch && <InputError>This field is required</InputError>}
+            </label>
             <button
               className="main-link"
-              type="submit">
+              type="submit"
+            >
               Find out
             </button>
           </form>

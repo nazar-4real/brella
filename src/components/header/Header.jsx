@@ -13,9 +13,9 @@ const Header = ({ setModal }) => {
   const linksData = [
     { label: 'Our Plan', url: '/plan' },
     { label: 'Employers', url: '/employers' },
-    { label: 'Brokers', url: '/benefits' },
-    { label: 'Members', url: '/experience' },
-    { label: 'About', url: '/explore' },
+    { label: 'Brokers', url: '/brokers' },
+    { label: 'Members', url: '/members' },
+    { label: 'About', url: '/about' },
     { label: 'Blog', url: '/blog' }
   ];
 

@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 import Logo from '../../Shared/Logo';
 import Section from '../../Shared/Section';
@@ -20,15 +20,15 @@ const FooterBasis = () => {
       menuLinks: [
         { linkName: 'Our Plan', linkUrl: '/plan' },
         { linkName: 'Employers', linkUrl: '/employers' },
-        { linkName: 'Brokers', linkUrl: '/benefits' },
-        { linkName: 'Members', linkUrl: '/experience' }
+        { linkName: 'Brokers', linkUrl: '/brokers' },
+        { linkName: 'Members', linkUrl: '/members' }
 
       ]
     },
     {
       menuTitle: 'Company',
       menuLinks: [
-        { linkName: 'About', linkUrl: '/explore' },
+        { linkName: 'About', linkUrl: '/about' },
         { linkName: 'Blog', linkUrl: '/blog' },
         { linkName: 'Careers', linkUrl: '/careers' },
         { linkName: 'Contact', linkUrl: '/contact' }
@@ -83,12 +83,12 @@ const FooterBasis = () => {
     const { socialIcon: icon, socialName: name } = item;
 
     return (
-      <a
+      <Link
         className={`social__link ${name}`}
-        href="/"
+        to="/#"
         key={i}>
         {icon}
-      </a>
+      </Link>
     )
   });
 
@@ -117,12 +117,12 @@ const FooterBasis = () => {
             <input
               className="form-input"
               placeholder="Email*"
-              {...register('footerEmail', {
+              {...register('email', {
                 required: !0,
                 minLength: 5
               })}
             />
-            {errors.footerEmail && <InputError>This field is required</InputError>}
+            {errors.email && <InputError>This field is required</InputError>}
           </label>
           <button
             className="form-submit"

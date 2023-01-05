@@ -91,11 +91,11 @@ const Hero = () => {
               <input
                 className="form-input"
                 placeholder="Enter your request"
-                {...register('heroSearch', {
+                {...register('search', {
                   required: !0
                 })}
               />
-              {errors.heroSearch && <InputError>This field is required</InputError>}
+              {errors.search && <InputError>This field is required</InputError>}
             </label>
             <button
               className="main-link"

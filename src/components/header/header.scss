@@ -15,8 +15,9 @@
 }
 
 .logo {
-  max-width: 75px;
+  width: 75px;
   height: 24px;
+  flex-shrink: 0;
 
   img {
     width: 100%;
@@ -60,7 +61,7 @@
 
   &_lever {
     width: 20px;
-    height: 20px;
+    height: 85%;
     border: 1px solid $greenLightColor;
     border-radius: 50%;
     background: rgba($yellowColor, 0.8);
@@ -115,6 +116,7 @@
 
 .burger {
   display: none;
+  flex-shrink: 0;
 }
 
 // Media
@@ -124,12 +126,12 @@
     padding: 15px 0;
 
     &__actions {
-      margin-left: 20px;
+      margin-left: 15px;
     }
   }
 
   .logo {
-    max-width: 65px;
+    width: 65px;
     margin-right: auto;
   }
 
@@ -193,7 +195,7 @@
   }
 
   .burger {
-    margin-left: 20px;
+    margin-left: 15px;
     display: block;
     width: 30px;
     height: 20px;
@@ -216,5 +218,23 @@
       bottom: 20%;
       width: 70%;
     }
+  }
+}
+
+@media (max-width: 375px) {
+  .logo {
+    width: 50px;
+  }
+
+  .nav {
+    &-link {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+
+  .theme-handler {
+    margin-left: 20px;
+    width: 45px;
   }
 }

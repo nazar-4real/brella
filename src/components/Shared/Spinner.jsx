@@ -1,15 +1,18 @@
+import styled from "styled-components";
 
-const styles = {
-  width: '200px',
-  height: '200px',
-  objectFit: 'contain',
-  margin: 'auto',
-  display: 'block',
-  shapeRendering: 'auto'
-}
+const Svg = styled.svg`
+  width: 200px;
+  height: 200px;
+  objectFit: contain;
+  margin: auto;
+  display: block;
+  shapeRendering: auto;
+`;
 
 const Spinner = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" style={styles} viewBox="0 0 100 100">
+  <Svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 100">
     <g transform="rotate(0 50 50)">
       <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#43806c">
         <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.9166666666666666s" repeatCount="indefinite" />
@@ -59,7 +62,7 @@ const Spinner = () => (
         <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite" />
       </rect>
     </g>
-  </svg>
+  </Svg>
 )
 
 export default Spinner;

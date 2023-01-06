@@ -1,15 +1,15 @@
-import { useForm } from 'react-hook-form';
-
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+
+import { useForm } from 'react-hook-form';
 
 import Logo from '../../Shared/Logo';
 import Section from '../../Shared/Section';
 
-import logo from '../../../assets/images/logo-white.svg';
-import formArrow from '../../../assets/images/arrow.svg';
-import { ReactComponent as Linkedin } from '../../../assets/images/social/linkedin.svg';
-import { ReactComponent as Twitter } from '../../../assets/images/social/twitter.svg';
-import { ReactComponent as Youtube } from '../../../assets/images/social/youtube.svg';
+import logo from 'src/assets/images/logo-white.svg';
+import formArrow from 'src/assets/images/arrow.svg';
+import { ReactComponent as Linkedin } from 'src/assets/images/social/linkedin.svg';
+import { ReactComponent as Twitter } from 'src/assets/images/social/twitter.svg';
+import { ReactComponent as Youtube } from 'src/assets/images/social/youtube.svg';
 
 import { InputError } from '../../hero/Hero';
 

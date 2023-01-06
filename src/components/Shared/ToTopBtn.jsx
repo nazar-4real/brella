@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
-import '../../assets/styles/global.scss';
+import 'src/assets/styles/global.scss';
 
-import arrow from '../../assets/images/arrow.svg';
+import arrow from 'src/assets/images/arrow.svg';
 
 const ToTopBtn = () => {
 
@@ -32,7 +32,7 @@ const ToTopBtn = () => {
     <>
       {show ? (
         <button className="totop-btn" onClick={toTop}>
-          <img className="totop-btn__icon" src={arrow} alt="" />
+          <img className="totop-btn__icon" src={arrow} alt="To top" />
         </button >
       ) : null}
     </>,

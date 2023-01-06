@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Layout from '../Layout';
 
+import ErrorBoundary from '../Shared/ErrorBoundary';
+
 import Hero from '../hero/Hero';
 import Explore from '../explore/Explore';
 import Benefits from '../benefits/Benefits';
@@ -13,9 +15,7 @@ import Blog from '../blog/Blog';
 import Page404 from '../Shared/Page404';
 import Confirmed from '../Shared/Confirmed';
 
-import ErrorBoundary from '../Shared/ErrorBoundary';
-
-import '../../assets/styles/global.scss';
+import 'src/assets/styles/global.scss';
 
 const App = () => {
   console.log("%cBrella business card application", "font-size: 14px; color: darkcyan;");

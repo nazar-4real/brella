@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
+
 import CustomHelmet from '../Shared/CustomHelmet';
+
+import FetchService from 'src/services/FetchService';
 
 import Section from '../Shared/Section';
 import SectionInfo from '../Shared/SectionInfo';
 import Spinner from '../Shared/Spinner';
 
-import FetchService from '../../services/FetchService';
-
 import './plan.scss';
 
-import planImg from '../../assets/images/plan/plan-img.svg';
+import planImg from 'src/assets/images/plan/plan-img.svg';
 
 const Plan = () => {
 

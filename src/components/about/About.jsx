@@ -4,7 +4,7 @@ import SectionLink from '../Shared/SectionLink';
 
 import './about.scss';
 
-import aboutChart from '../../assets/images/about/about-chart.png';
+import aboutChart from 'src/assets/images/about/about-chart.png';
 
 const About = () => (
   <Section className="about">

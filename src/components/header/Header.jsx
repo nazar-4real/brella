@@ -6,7 +6,7 @@ import Button from '../Shared/Button';
 
 import './header.scss';
 
-import logo from '../../assets/images/logo.svg';
+import logo from 'src/assets/images/logo.svg';
 
 const Header = ({ setModal }) => {
 

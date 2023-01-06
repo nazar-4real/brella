@@ -7,7 +7,7 @@ import Button from '../Shared/Button';
 
 import './explore.scss';
 
-import exploreImg from '../../assets/images/explore/explore-img.jpg';
+import exploreImg from 'src/assets/images/explore/explore-img.jpg';
 
 const Explore = () => (
   <>

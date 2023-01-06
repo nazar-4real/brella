@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import '../../assets/styles/global.scss';
+import 'src/assets/styles/global.scss';
 
 const Button = ({ text, reference = '/#', onClick = null }) => (
   <Link

@@ -1,6 +1,6 @@
 import SectionSubtitle from './SectionSubtitle';
 
-import '../../assets/styles/global.scss';
+import 'src/assets/styles/global.scss';
 
 const SectionInfo = ({ className, isSubtitle = true, subtitle, title, children }) => (
   <div className={className}>

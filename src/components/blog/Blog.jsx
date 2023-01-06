@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react';
+
 import CustomHelmet from '../Shared/CustomHelmet';
 
-import Section from '../Shared/Section';
+import FetchService from 'src/services/FetchService';
 
-import FetchService from '../../services/FetchService';
+import Section from '../Shared/Section';
 import Spinner from '../Shared/Spinner';
 
 import './blog.scss';
 
-import blogCard1 from '../../assets/images/blog/blog-card-1.jpg';
-import blogCard2 from '../../assets/images/blog/blog-card-2.jpg';
-import blogCard3 from '../../assets/images/blog/blog-card-3.jpg';
+import blogCard1 from 'src/assets/images/blog/blog-card-1.jpg';
+import blogCard2 from 'src/assets/images/blog/blog-card-2.jpg';
+import blogCard3 from 'src/assets/images/blog/blog-card-3.jpg';
 
 const Blog = () => {
 

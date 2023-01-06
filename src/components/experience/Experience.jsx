@@ -1,14 +1,14 @@
 import CustomHelmet from '../Shared/CustomHelmet';
 
-import Pride from '../pride/Pride';
-
 import Section from '../Shared/Section';
 import SectionInfo from '../Shared/SectionInfo';
 import SectionLink from '../Shared/SectionLink';
 
+import Pride from '../pride/Pride';
+
 import './experience.scss';
 
-import experienceImg from '../../assets/images/experience/experience-img.png';
+import experienceImg from 'src/assets/images/experience/experience-img.png';
 
 const Experience = () => (
   <>

@@ -1,19 +1,19 @@
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import styled from 'styled-components';
 
 import CustomHelmet from '../Shared/CustomHelmet';
-
-import About from '../about/About';
 
 import Section from '../Shared/Section';
 import SectionInfo from '../Shared/SectionInfo';
 
-import './hero.scss';
-import styled from 'styled-components';
+import About from '../about/About';
 
-import benefitIcon1 from '../../assets/images/hero/hero-benefit-icon-1.svg';
-import benefitIcon2 from '../../assets/images/hero/hero-benefit-icon-2.svg';
-import benefitIcon3 from '../../assets/images/hero/hero-benefit-icon-3.svg';
+import './hero.scss';
+
+import benefitIcon1 from 'src/assets/images/hero/hero-benefit-icon-1.svg';
+import benefitIcon2 from 'src/assets/images/hero/hero-benefit-icon-2.svg';
+import benefitIcon3 from 'src/assets/images/hero/hero-benefit-icon-3.svg';
 
 export const InputError = styled.span`
   font-size: 12px;

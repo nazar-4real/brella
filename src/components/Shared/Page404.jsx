@@ -1,7 +1,7 @@
 import Section from "./Section";
 import Button from "./Button";
 
-import error404 from '../../assets/images/error-404.jpg';
+import error404 from 'src/assets/images/error-404.jpg';
 
 const Page404 = () => (
   <Section className="page-404">

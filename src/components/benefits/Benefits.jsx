@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
 import CustomHelmet from '../Shared/CustomHelmet';
 
 import Section from '../Shared/Section';
 import SectionInfo from '../Shared/SectionInfo';
 import Spinner from '../Shared/Spinner';
 
-import FetchService from '../../services/FetchService.js';
+import FetchService from 'src/services/FetchService';
 
 import './benefits.scss';
 

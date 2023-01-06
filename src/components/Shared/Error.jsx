@@ -1,20 +1,24 @@
-import errorImg from '../../assets/images/error.gif';
+import styled from 'styled-components';
 
-const styles = {
-  display: 'block',
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)'
-}
+import errorImg from 'src/assets/images/error.gif';
+
+const Img = styled.img`
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 50vh;
+  width: 100%;
+  height: 50vh;
+`;
 
 const Error = () => {
   return (
-    <img
+    <Img
       className="error-img"
       src={errorImg}
-      alt="Error"
-      style={styles} />
+      alt="Error" />
   )
 }
 

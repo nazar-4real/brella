@@ -8,13 +8,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import './pride.scss';
 
-import prevArrow from '../../assets/images/pride/arrow-left.svg';
-import nextArrow from '../../assets/images/pride/arrow-right.svg';
-import brewerLogo from '../../assets/images/pride/brewer-logo.png';
-import sigmaLogo from '../../assets/images/pride/sigma-logo.png';
-import digitalisLogo from '../../assets/images/pride/digitalis-logo.png';
-import founderLogo from '../../assets/images/pride/founder-logo.png';
-import symphonyLogo from '../../assets/images/pride/symphony-logo.png';
+import prevArrow from 'src/assets/images/pride/arrow-left.svg';
+import nextArrow from 'src/assets/images/pride/arrow-right.svg';
+import brewerLogo from 'src/assets/images/pride/brewer-logo.png';
+import sigmaLogo from 'src/assets/images/pride/sigma-logo.png';
+import digitalisLogo from 'src/assets/images/pride/digitalis-logo.png';
+import founderLogo from 'src/assets/images/pride/founder-logo.png';
+import symphonyLogo from 'src/assets/images/pride/symphony-logo.png';
 
 const slidesData = [
   {

@@ -1,21 +1,31 @@
 import { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+
+import { useForm } from 'react-hook-form';
 
 import FormField from './FormField';
 
+const Error = styled.span`
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: crimson;
+  margin: -13px 0 10px;
+
+  @media (max-width: 768px) {
+    margin-top: -8px;
+    font-size: 8px;
+  }
+`;
+
 const Modal = ({ isOpen, setModal }) => {
-  const inputRef = useRef();
 
   useEffect(() => {
     document.documentElement.style.overflow = `${isOpen ? 'hidden' : ''}`;
     document.body.style.marginRight = `${isOpen ? '7px' : ''}`;
   }, [isOpen]);
-
-  useEffect(() => {
-    if (inputRef && inputRef.current) {
-      inputRef.current.focus();
-    }
-  });
 
   useEffect(() => {
     const closeOnEscape = e => e.key === 'Escape' ? setModal(false) : null;
@@ -27,10 +37,36 @@ const Modal = ({ isOpen, setModal }) => {
   }, [setModal]);
 
   const closeModal = (e) => {
-    if (e.target.matches('.modal') || e.target.closest('.modal-close')) {
-      setModal(false);
-    }
+    (e.target.matches('.modal') || e.target.closest('.modal-close')) && setModal(false);
   }
+
+  const { register, handleSubmit, reset, clearErrors, formState: { errors } } = useForm();
+
+  const navigate = useNavigate();
+
+  const onSubmit = () => {
+    console.log('Submited!');
+    reset();
+    setModal(false);
+    navigate('/confirmed');
+  }
+
+  useEffect(() => {
+    if (Object.keys(errors).length > 0) {
+      setTimeout(() => {
+        clearErrors();
+      }, 2000)
+    }
+  })
+
+  const inputRef = useRef(null);
+  const { ref, ...rest } = register('name', {
+    required: !0
+  });
+
+  useEffect(() => {
+    inputRef.current && inputRef.current.focus()
+  }, [isOpen]);
 
   return ReactDOM.createPortal(
     <>
@@ -40,21 +76,40 @@ const Modal = ({ isOpen, setModal }) => {
             <h2 className="main-title">
               Fill out the form below
             </h2>
-            <form className="form">
+            <form
+              className="form"
+              onSubmit={handleSubmit(onSubmit)}
+              noValidate
+            >
               <FormField
+                type="text"
                 name="name"
                 placeholder="Enter your name..."
-                ref={inputRef} />
+                {...rest}
+                ref={(e) => {
+                  ref(e);
+                  inputRef.current = e;
+                }}
+              />
+              {errors.name && <Error>The field is mandatory</Error>}
               <FormField
                 type="email"
                 name="email"
-                placeholder="Enter your email..." />
+                placeholder="Enter your email..."
+                {...register('email', {
+                  required: !0,
+                  minLength: 3
+                })} />
+              {errors.email && <Error>The field is mandatory</Error>}
               <label className="form-label">
                 <textarea
                   className="form-input"
                   placeholder="Enter your comment..."
-                  required />
+                  {...register('comment', {
+                    required: !0
+                  })} />
               </label>
+              {errors.comment && <Error>The field is mandatory</Error>}
               <button
                 className="main-link"
                 type="submit">

@@ -1,15 +1,11 @@
 import { forwardRef } from "react";
 
-const FormField = forwardRef(({ type = 'text', name, placeholder }, ref) => (
+const FormField = forwardRef(({ ...props }, ref) => (
   <label className="form-label">
     <input
       className="form-input"
-      type={type}
-      name={name}
-      placeholder={placeholder}
       ref={ref}
-      required
-    />
+      {...props} />
   </label>
 ))
 

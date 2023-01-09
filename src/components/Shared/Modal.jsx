@@ -23,8 +23,10 @@ const Error = styled.span`
 const Modal = ({ isOpen, setModal }) => {
 
   useEffect(() => {
-    document.documentElement.style.overflow = `${isOpen ? 'hidden' : ''}`;
-    document.body.style.marginRight = `${isOpen ? '7px' : ''}`;
+    if (window.matchMedia('(min-width: 992px)').matches) {
+      document.documentElement.style.overflow = `${isOpen ? 'hidden' : ''}`;
+      document.body.style.marginRight = `${isOpen ? '7px' : ''}`;
+    }
   }, [isOpen]);
 
   useEffect(() => {

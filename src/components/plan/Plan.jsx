@@ -26,7 +26,7 @@ const Plan = () => {
         setloading(false);
       })
     // eslint-disable-next-line
-  }, []);
+  }, [setUsers]);
 
   const planCards = users.map(card => {
     const { id, username, email } = card;

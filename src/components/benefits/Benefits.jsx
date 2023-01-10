@@ -25,7 +25,7 @@ const Benefits = () => {
         setLoading(false);
       })
     // eslint-disable-next-line
-  }, []);
+  }, [setLinks]);
 
   const linksList = links.map(link => {
     const { id, website, name } = link;

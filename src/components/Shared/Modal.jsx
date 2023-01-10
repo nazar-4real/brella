@@ -47,7 +47,6 @@ const Modal = ({ isOpen, setModal }) => {
   const navigate = useNavigate();
 
   const onSubmit = () => {
-    console.log('Submited!');
     reset();
     setModal(false);
     navigate('/confirmed');
@@ -68,7 +67,7 @@ const Modal = ({ isOpen, setModal }) => {
 
   useEffect(() => {
     inputRef.current && inputRef.current.focus()
-  }, [isOpen]);
+  }, [isOpen])
 
   return ReactDOM.createPortal(
     <>

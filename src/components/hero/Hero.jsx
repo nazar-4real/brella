@@ -70,7 +70,6 @@ const Hero = () => {
 
   const onSubmitForm = data => {
     navigate('/confirmed');
-    console.log(JSON.stringify(data));
     reset();
   }
 

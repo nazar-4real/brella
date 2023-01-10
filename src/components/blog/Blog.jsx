@@ -27,7 +27,7 @@ const Blog = () => {
         setLoading(false);
       })
     // eslint-disable-next-line
-  }, []);
+  }, [setArticles]);
 
   const blogImages = [blogCard1, blogCard2, blogCard3];
 

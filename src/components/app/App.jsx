@@ -18,7 +18,7 @@ import Confirmed from '../Shared/Confirmed';
 import 'src/assets/styles/global.scss';
 
 const App = () => {
-  console.log("%cBrella business card application", "font-size: 14px; color: darkcyan;");
+  console.log("%cBrella - the simple SPA", "font-size: 14px; color: darkcyan;");
 
   return (
     <>

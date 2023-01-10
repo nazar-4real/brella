@@ -3,10 +3,10 @@ import styled from "styled-components";
 const Svg = styled.svg`
   width: 200px;
   height: 200px;
-  objectFit: contain;
+  object-fit: contain;
   margin: auto;
   display: block;
-  shapeRendering: auto;
+  shape-rendering: auto;
 `;
 
 const Spinner = () => (

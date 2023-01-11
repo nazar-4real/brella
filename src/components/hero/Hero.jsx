@@ -7,8 +7,6 @@ import CustomHelmet from '../Shared/CustomHelmet';
 import Section from '../Shared/Section';
 import SectionInfo from '../Shared/SectionInfo';
 
-import About from '../about/About';
-
 import './hero.scss';
 
 import benefitIcon1 from 'src/assets/images/hero/hero-benefit-icon-1.svg';
@@ -108,8 +106,6 @@ const Hero = () => {
           {heroBenefitsList}
         </div>
       </Section>
-
-      <About />
     </>
   );
 };

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Section = ({ className, isContainer = true, children, style }) => (
   <section className={`section ${className}`} style={style}>
     {

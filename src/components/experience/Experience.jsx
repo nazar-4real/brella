@@ -4,8 +4,6 @@ import Section from '../Shared/Section';
 import SectionInfo from '../Shared/SectionInfo';
 import SectionLink from '../Shared/SectionLink';
 
-import Pride from '../pride/Pride';
-
 import './experience.scss';
 
 import experienceImg from 'src/assets/images/experience/experience-img.png';
@@ -28,8 +26,6 @@ const Experience = () => (
         <SectionLink text="Play video" />
       </SectionInfo>
     </Section>
-
-    <Pride />
   </>
 )
 

@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet"
+import { Helmet } from 'react-helmet';
 
 const favicon = `${process.env.PUBLIC_URL}/favicon.svg`;
 
@@ -11,4 +11,4 @@ const CustomHelmet = ({ title, icon = favicon }) => {
   )
 }
 
-export default CustomHelmet
+export default CustomHelmet;

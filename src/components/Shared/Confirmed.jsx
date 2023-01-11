@@ -1,7 +1,7 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
-import Section from "./Section"
-import Button from "./Button"
+import Section from './Section';
+import Button from './Button';
 
 const Div = styled.div`
   margin-bottom: 20px;
@@ -16,4 +16,4 @@ const Confirm = () => {
   )
 }
 
-export default Confirm
+export default Confirm;

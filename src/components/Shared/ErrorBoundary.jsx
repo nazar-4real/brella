@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component } from 'react';
 import Error from '../Shared/Error';
 
 class ErrorBoundary extends Component {
@@ -29,4 +29,4 @@ class ErrorBoundary extends Component {
   }
 }
 
-export default ErrorBoundary
+export default ErrorBoundary;

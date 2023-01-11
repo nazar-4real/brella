@@ -5,13 +5,13 @@ import { useForm } from 'react-hook-form';
 import Logo from '../../Shared/Logo';
 import Section from '../../Shared/Section';
 
+import { InputError } from '../../hero/Hero';
+
 import logo from 'src/assets/images/logo-white.svg';
 import formArrow from 'src/assets/images/arrow.svg';
 import { ReactComponent as Linkedin } from 'src/assets/images/social/linkedin.svg';
 import { ReactComponent as Twitter } from 'src/assets/images/social/twitter.svg';
 import { ReactComponent as Youtube } from 'src/assets/images/social/youtube.svg';
-
-import { InputError } from '../../hero/Hero';
 
 const FooterBasis = () => {
   const menuData = [
@@ -95,7 +95,7 @@ const FooterBasis = () => {
   const navigate = useNavigate();
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
-  const onSubmitForm = data => {
+  const onSubmitForm = () => {
     navigate('/confirmed');
     reset();
   }

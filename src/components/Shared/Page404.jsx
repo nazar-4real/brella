@@ -1,5 +1,5 @@
-import Section from "./Section";
-import Button from "./Button";
+import Section from './Section';
+import Button from './Button';
 
 import error404 from 'src/assets/images/error-404.jpg';
 

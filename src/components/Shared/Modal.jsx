@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import ReactDOM from 'react-dom';
+import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -69,7 +69,7 @@ const Modal = ({ isOpen, setModal }) => {
     inputRef.current && inputRef.current.focus()
   }, [isOpen])
 
-  return ReactDOM.createPortal(
+  return createPortal(
     <>
       {!isOpen ? null : (
         <section className="modal" onClick={closeModal}>

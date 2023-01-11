@@ -1,19 +1,19 @@
 import { Helmet } from 'react-helmet';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Layout from '../Layout';
-
 import ErrorBoundary from '../Shared/ErrorBoundary';
 
-import Hero from '../hero/Hero';
-import Explore from '../explore/Explore';
-import Benefits from '../benefits/Benefits';
-import Plan from '../plan/Plan';
-import Experience from '../experience/Experience';
-import Employers from '../employers/Employers';
-import Blog from '../blog/Blog';
+import Layout from '../Layout';
 import Page404 from '../Shared/Page404';
 import Confirmed from '../Shared/Confirmed';
+
+import HomePage from 'src/pages/HomePage';
+import PlanPage from 'src/pages/PlanPage';
+import EmployersPage from 'src/pages/EmployersPage';
+import BrokersPage from 'src/pages/BrokersPage';
+import MembersPage from 'src/pages/MembersPage';
+import AboutPage from 'src/pages/AboutPage';
+import BlogPage from 'src/pages/BlogPage';
 
 import 'src/assets/styles/global.scss';
 
@@ -33,13 +33,13 @@ const App = () => {
           <Router>
             <Routes>
               <Route path='/' element={<Layout />}>
-                <Route index element={<Hero />} />
-                <Route path='plan' element={<Plan />} />
-                <Route path='employers' element={<Employers />} />
-                <Route path='brokers' element={<Benefits />} />
-                <Route path='members' element={<Experience />} />
-                <Route path='about' element={<Explore />} />
-                <Route path='blog' element={<Blog />} />
+                <Route index element={<HomePage />} />
+                <Route path='plan' element={<PlanPage />} />
+                <Route path='employers' element={<EmployersPage />} />
+                <Route path='brokers' element={<BrokersPage />} />
+                <Route path='members' element={<MembersPage />} />
+                <Route path='about' element={<AboutPage />} />
+                <Route path='blog' element={<BlogPage />} />
                 <Route path='confirmed' element={<Confirmed />} />
                 <Route path='*' element={<Page404 />} />
               </Route>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import { createPortal } from 'react-dom';
 
 import 'src/assets/styles/global.scss';
 
@@ -28,7 +28,7 @@ const ToTopBtn = () => {
     })
   };
 
-  return ReactDOM.createPortal(
+  return createPortal(
     <>
       {show ? (
         <button className="totop-btn" onClick={toTop}>

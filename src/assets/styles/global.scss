@@ -156,8 +156,8 @@ textarea {
   margin-bottom: 34px;
 
   @media (max-width: 768px) {
-    font-size: 30px;
-    line-height: 38px;
+    font-size: 25px;
+    line-height: 32px;
     margin-bottom: 10px;
   }
 }
@@ -194,6 +194,11 @@ textarea {
     color: $greenLightColor;
     border-color: $greenLightColor;
   }
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+    padding-bottom: 7px;
+  }
 }
 
 // Modal
@@ -212,7 +217,7 @@ textarea {
   &-dialog {
     background: $whiteColor;
     padding: 40px;
-    max-width: 40%;
+    max-width: 55%;
     width: 100%;
     position: relative;
     border-radius: 5px;
@@ -223,9 +228,17 @@ textarea {
     }
 
     @media (max-width: 768px) {
-      max-width: 90%;
+      max-width: 65%;
       padding: 30px;
       margin-top: -10vh;
+    }
+
+    @media (max-width: 575px) {
+      max-width: 80%;
+    }
+
+    @media (max-width: 375px) {
+      max-width: 95%;
     }
   }
 
@@ -235,6 +248,12 @@ textarea {
     @media (max-width: 991px) {
       font-size: 30px;
       line-height: 35px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 22px;
+      line-height: 28px;
+      margin-bottom: 10px;
     }
   }
 

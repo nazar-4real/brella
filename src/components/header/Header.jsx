@@ -9,6 +9,8 @@ import Button from '../shared/Button';
 import { HeaderThemed } from 'src/theme/Header';
 import { NavLinkThemed } from 'src/theme/Header';
 
+import { ThemedNav } from 'src/theme/Nav';
+
 import './header.scss';
 
 import logo from 'src/assets/images/logo.svg';
@@ -53,7 +55,7 @@ const Header = ({ setModal }) => {
   }
 
   useEffect(() => {
-    document.documentElement.style.overflow = `${showMenu ? 'hidden' : ''} `;
+    document.documentElement.style.overflow = showMenu ? 'hidden' : '';
   }, [showMenu]);
 
   const location = useLocation();
@@ -80,15 +82,17 @@ const Header = ({ setModal }) => {
       <div className="container">
         <div className="header__body">
           <Logo srcPath={theme === 'dark' ? logoThemed : logo} />
-          <nav className={`nav ${showMenu ? 'show' : ''} `}>
-            <ul className="nav__list">
-              {renderLinks}
-            </ul>
+          <ThemedNav className={`${showMenu ? 'show' : ''} `}>
+            <div className="nav__inner">
+              <ul className="nav__list">
+                {renderLinks}
+              </ul>
+            </div>
             <button className="nav_close" onClick={handleMenu}>
               <span></span>
               <span></span>
             </button>
-          </nav>
+          </ThemedNav>
           <input
             id="theme-switch"
             type="checkbox"

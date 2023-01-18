@@ -258,3 +258,20 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .privacy__text {
+    p {
+      text-align: justify;
+      text-align-last: center;
+    }
+
+    p + p {
+      margin-top: 10px !important;
+    }
+  }
+
+  .copyright {
+    margin-top: 30px !important;
+  }
+}

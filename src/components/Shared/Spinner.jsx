@@ -10,6 +10,11 @@ const Svg = styled.svg`
   margin: auto;
   display: block;
   shape-rendering: auto;
+
+  @media (max-width: 768px) {
+    width: 140px;
+    height: 140px;
+  }
 `;
 
 const Spinner = () => {

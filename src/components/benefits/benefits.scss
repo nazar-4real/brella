@@ -127,12 +127,7 @@
 
 @media (max-width: 768px) {
   .benefits {
-    padding: 0;
-
-    &::before,
-    &::after {
-      display: none;
-    }
+    padding: 0 !important;
 
     &__body {
       flex-direction: column;
@@ -142,16 +137,27 @@
     &__info,
     &__content {
       max-width: 100%;
-      padding: 60px 15px;
+      padding: 50px 15px;
     }
 
-    &__info {
-      background: $greenLighterColor;
+    &__list-link {
+      font-size: 23px;
+      line-height: 30px;
     }
 
     &__content {
-      background: $greenColor;
-      border-bottom: 1px solid $greenLighterColor;
+      background: #052f23;
+      border-top: 1px solid $greenLighterColor;
+    }
+
+    .main-text {
+      font-size: 16px;
+      line-height: 25px;
+      text-align: justify;
+    }
+
+    .main-text + .main-text {
+      margin-top: 15px;
     }
   }
 }

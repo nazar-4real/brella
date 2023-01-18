@@ -50,10 +50,18 @@ const Benefits = () => {
 
     &::before {
       background-color: ${theme === 'dark' ? '#122220' : ''};
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
     }
 
     &::after {
       background-color: ${theme === 'dark' ? '#052f23' : ''};
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
   `;
 

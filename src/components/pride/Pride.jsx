@@ -100,7 +100,7 @@ const Pride = () => {
         </button>
         <Swiper
           slidesPerView={5}
-          spaceBetween={30}
+          spaceBetween={40}
           modules={[Navigation, Autoplay]}
           onSwiper={setSwiper}
           loop

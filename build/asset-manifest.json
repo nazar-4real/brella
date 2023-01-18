@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.9b7f4b96.css",
-    "main.js": "/static/js/main.b9f1bd80.js",
+    "main.css": "/static/css/main.bf176886.css",
+    "main.js": "/static/js/main.e11adf6b.js",
+    "static/media/error-404.png": "/static/media/error-404.428d58a831ec212288e6.png",
     "static/media/Roboto-Regular.ttf": "/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
     "static/media/Roboto-Bold.ttf": "/static/media/Roboto-Bold.f80816a5455d171f948d.ttf",
     "static/media/Raleway-Regular.ttf": "/static/media/Raleway-Regular.9ade142e81dd8d55cd32.ttf",
     "static/media/Raleway-Bold.ttf": "/static/media/Raleway-Bold.d1a96e2aa6257c864d4d.ttf",
-    "static/media/error-404.jpg": "/static/media/error-404.17db846aba9f71b33f43.jpg",
     "static/media/error.gif": "/static/media/error.ce98f053997969d273be.gif",
     "static/media/hero-bg.jpg": "/static/media/hero-bg.21a9defb5ec6ff5ef596.jpg",
     "static/media/hero-benefit-icon-1.svg": "/static/media/hero-benefit-icon-1.d3be6ae4c83dec1636f657ef6e6c0279.svg",
@@ -16,6 +16,7 @@
     "static/media/plan-img.svg": "/static/media/plan-img.ab50a0a4033c1df56d74dea78498842d.svg",
     "static/media/hero-benefit-icon-2.svg": "/static/media/hero-benefit-icon-2.63a1354b9162e5d153adf90a55a27805.svg",
     "static/media/experience-img.png": "/static/media/experience-img.46c26dba07086bb6c985.png",
+    "static/media/logo-themed.svg": "/static/media/logo-themed.cea1df24dd6fdca9bf139ea64a4b9e9c.svg",
     "static/media/logo.svg": "/static/media/logo.a648d9d0fe4eb1919744a6c454757033.svg",
     "static/media/logo-white.svg": "/static/media/logo-white.ab36332f7bbdf9840823cc40b7fdffa1.svg",
     "static/media/twitter.svg": "/static/media/twitter.dec736c78325d4a0a67630a161fbbbfa.svg",
@@ -25,11 +26,11 @@
     "static/media/arrow-right.svg": "/static/media/arrow-right.e3ce03b3e85079ecc9c84af37bb1d0b2.svg",
     "static/media/arrow.svg": "/static/media/arrow.e3ce03b3e85079ecc9c84af37bb1d0b2.svg",
     "static/media/arrow-left.svg": "/static/media/arrow-left.0cc6c41fd58b5ff48c03e6b8d6f54083.svg",
-    "main.9b7f4b96.css.map": "/static/css/main.9b7f4b96.css.map",
-    "main.b9f1bd80.js.map": "/static/js/main.b9f1bd80.js.map"
+    "main.bf176886.css.map": "/static/css/main.bf176886.css.map",
+    "main.e11adf6b.js.map": "/static/js/main.e11adf6b.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b7f4b96.css",
-    "static/js/main.b9f1bd80.js"
+    "static/css/main.bf176886.css",
+    "static/js/main.e11adf6b.js"
   ]
 }

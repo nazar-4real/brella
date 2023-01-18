@@ -6,13 +6,14 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  transition: all 0.3s;
 }
 
 html,
 body,
 #root,
 .app {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
@@ -29,34 +30,6 @@ body {
   &::-webkit-scrollbar-thumb {
     background: $greenColor;
     border-radius: 2px;
-  }
-
-  &[data-theme="dark"] {
-    background: $darkColor;
-
-    input,
-    textarea {
-      background: #222;
-      color: #fff;
-
-      &::placeholder {
-        color: inherit;
-      }
-    }
-
-    .main-title {
-      color: #469379;
-    }
-
-    .main-link {
-      background: #469379;
-    }
-
-    .modal {
-      &-dialog {
-        background: #222;
-      }
-    }
   }
 }
 
@@ -103,7 +76,7 @@ textarea {
   }
 }
 
-textarea { 
+textarea {
   resize: none;
   min-height: 120px;
 
@@ -243,6 +216,7 @@ textarea {
     width: 100%;
     position: relative;
     border-radius: 5px;
+    box-shadow: 0 0 15px -3px rgba(255, 255, 255, 0.5);
 
     @media (max-width: 991px) {
       max-width: 60%;

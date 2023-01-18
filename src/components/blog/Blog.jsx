@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 
-import CustomHelmet from '../Shared/CustomHelmet';
-
 import FetchService from 'src/services/FetchService';
 
-import Section from '../Shared/Section';
-import Spinner from '../Shared/Spinner';
+import Section from '../shared/Section';
+import Spinner from '../shared/Spinner';
+
+import { Title } from 'src/theme/Title';
+import { Text } from 'src/theme/Text';
 
 import './blog.scss';
 
@@ -14,7 +15,6 @@ import blogCard2 from 'src/assets/images/blog/blog-card-2.jpg';
 import blogCard3 from 'src/assets/images/blog/blog-card-3.jpg';
 
 const Blog = () => {
-
   const fetchService = new FetchService();
 
   const [articles, setArticles] = useState([]);
@@ -44,26 +44,22 @@ const Blog = () => {
             src={blogImages[i]}
             alt="Article about some event" />
         </div>
-        <p className="blog__card-tag">
+        <Text className="blog__card-tag">
           {username}
-        </p>
-        <h2 className="main-title">
+        </Text>
+        <Title className="main-title">
           {catchPhrase}
-        </h2>
+        </Title>
       </div>
     )
   });
 
   return (
-    <>
-      <CustomHelmet title="Blog" />
-
-      <Section className="blog">
-        <div className="blog__cards">
-          {loading ? <Spinner /> : articlesCards}
-        </div>
-      </Section>
-    </>
+    <Section className="blog">
+      <div className="blog__cards">
+        {loading ? <Spinner /> : articlesCards}
+      </div>
+    </Section>
   );
 };
 

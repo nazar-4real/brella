@@ -6,12 +6,11 @@ import 'src/assets/styles/global.scss';
 import arrow from 'src/assets/images/arrow.svg';
 
 const ToTopBtn = () => {
-
   const [show, setShow] = useState(false);
 
   useEffect(() => {
     const checkScroll = () => {
-      return window.scrollY > 500 ? setShow(true) : setShow(false);
+      return window.scrollY > 300 ? setShow(true) : setShow(false);
     };
 
     window.addEventListener('scroll', checkScroll);

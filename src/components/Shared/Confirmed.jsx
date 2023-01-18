@@ -5,6 +5,7 @@ import Button from './Button';
 
 const Div = styled.div`
   margin-bottom: 20px;
+  color: ${(props) => props.theme.text}
 `;
 
 const Confirm = () => {

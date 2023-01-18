@@ -11,7 +11,6 @@
     top: 0;
     width: 50%;
     height: 100%;
-    z-index: -1;
   }
 
   &::before {
@@ -27,6 +26,7 @@
   &__body {
     display: flex;
     align-items: flex-start;
+    position: relative;
   }
 
   &__info,

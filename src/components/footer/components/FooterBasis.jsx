@@ -1,11 +1,13 @@
+import { useContext, useEffect } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-
 import { useForm } from 'react-hook-form';
 
-import Logo from '../../Shared/Logo';
-import Section from '../../Shared/Section';
+import { ThemeContext } from 'src/context/ThemeContext';
 
-import { InputError } from '../../hero/Hero';
+import Logo from '../../shared/Logo';
+import Section from '../../shared/Section';
+
+import { InputError } from 'src/components/shared/InputError';
 
 import logo from 'src/assets/images/logo-white.svg';
 import formArrow from 'src/assets/images/arrow.svg';
@@ -14,6 +16,8 @@ import { ReactComponent as Twitter } from 'src/assets/images/social/twitter.svg'
 import { ReactComponent as Youtube } from 'src/assets/images/social/youtube.svg';
 
 const FooterBasis = () => {
+  const { theme } = useContext(ThemeContext);
+
   const menuData = [
     {
       menuTitle: 'Join Brella',
@@ -59,7 +63,11 @@ const FooterBasis = () => {
         <NavLink
           className={({ isActive }) => isActive ? 'footer-nav__link active-link' : 'footer-nav__link'}
           to={url}
-          key={i} >
+          key={i}
+          style={({ isActive }) => ({
+            color: isActive ? '#96e6ca' : '#fff',
+            borderColor: isActive ? '#96e6ca' : 'transparent'
+          })}>
           {link}
         </NavLink>
       )
@@ -69,7 +77,11 @@ const FooterBasis = () => {
       <div
         className="footer-basis__column"
         key={i}>
-        <h5 className="footer-basis__column-title">
+        <h5
+          className="footer-basis__column-title"
+          style={{
+            color: theme === 'dark' ? '#96e6ca' : '#fff'
+          }}>
           {menu.menuTitle}
         </h5>
         <div className="footer-nav">
@@ -93,19 +105,33 @@ const FooterBasis = () => {
   });
 
   const navigate = useNavigate();
-  const { register, handleSubmit, reset, formState: { errors } } = useForm();
+  const { register, handleSubmit, reset, clearErrors, formState: { errors } } = useForm();
 
   const onSubmitForm = () => {
     navigate('/confirmed');
     reset();
   }
 
+  useEffect(() => {
+    if (Object.keys(errors).length > 0) {
+      setTimeout(() => {
+        clearErrors();
+      }, 2000)
+    }
+  })
+
   return (
-    <Section className="footer-basis">
+    <Section className="footer-basis" style={{
+      backgroundColor: theme !== 'dark' ? '#214e41' : ''
+    }}>
       <Logo srcPath={logo} />
       {menuColumn}
       <div className="footer-basis__column">
-        <h5 className="footer-basis__column-title">
+        <h5
+          className="footer-basis__column-title"
+          style={{
+            color: theme === 'dark' ? '#96e6ca' : '#fff'
+          }}>
           Get the latest
         </h5>
         <p className="footer-text">
@@ -121,7 +147,7 @@ const FooterBasis = () => {
                 minLength: 5
               })}
             />
-            {errors.email && <InputError>This field is required</InputError>}
+            {errors.email && <InputError>Not enough characters</InputError>}
           </label>
           <button
             className="form-submit"

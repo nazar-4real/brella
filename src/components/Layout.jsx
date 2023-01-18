@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 
-import Modal from './Shared/Modal';
+import Modal from './shared/Modal';
 import Header from './header/Header';
 import Footer from './footer/Footer';
-import ToTopBtn from './Shared/ToTopBtn';
+import ToTopBtn from './shared/ToTopBtn';
 
 const Layout = () => {
   const [modal, setModal] = useState(false);

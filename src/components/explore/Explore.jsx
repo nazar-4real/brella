@@ -1,18 +1,19 @@
-import CustomHelmet from '../Shared/CustomHelmet';
+import { useContext } from 'react';
 
-import Section from '../Shared/Section';
-import SectionInfo from '../Shared/SectionInfo';
+import { ThemeContext } from 'src/context/ThemeContext';
 
-import Button from '../Shared/Button';
+import Section from '../shared/Section';
+import SectionInfo from '../shared/SectionInfo';
+import Button from '../shared/Button';
 
 import './explore.scss';
 
 import exploreImg from 'src/assets/images/explore/explore-img.jpg';
 
-const Explore = () => (
-  <>
-    <CustomHelmet title="About Us" />
+const Explore = () => {
+  const { theme } = useContext(ThemeContext);
 
+  return (
     <Section className="explore" isContainer={false}>
       <div className="explore__picture">
         <img className="explore__img" src={exploreImg} alt="" />
@@ -20,14 +21,21 @@ const Explore = () => (
       <SectionInfo
         className="explore__info"
         isSubtitle={false}
-        title="Ready to explore Brella’s supplemental health solution?">
-        <h2 className="main-title">
+        title="Ready to explore Brella’s supplemental health solution?"
+        style={{
+          background: theme === 'dark' ? '#214e41' : ''
+        }}>
+        <h2
+          className="main-title"
+          style={{
+            color: theme === 'dark' ? '#96e6ca' : ''
+          }}>
           Let’s talk.
         </h2>
         <Button text="Get in touch" />
       </SectionInfo>
     </Section>
-  </>
-)
+  )
+}
 
 export default Explore;

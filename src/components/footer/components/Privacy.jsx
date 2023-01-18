@@ -1,9 +1,13 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import Section from 'src/components/Shared/Section';
+import { ThemeContext } from 'src/context/ThemeContext';
+
+import Section from 'src/components/shared/Section';
 
 const Privacy = () => {
   const date = new Date().getFullYear();
+  const { theme } = useContext(ThemeContext);
 
   const privacyText = [
     'Brella is a limited benefit policy; it is not a substitute for health insurance. The information provided on this website is illustrative only. A complete description of benefits, limitations, and exclusions are provided in your certificate of Insurance and applicable Riders. For a summary of limitations and exclusions, see our FAQ. Payout values listed do not guarantee an amount to be paid for listed conditions. Product not available in all states. All coverage is subject to the terms and conditions of the master group policy.',
@@ -23,7 +27,11 @@ const Privacy = () => {
   ];
 
   const privacyContent = privacyText.map((text, i) => (
-    <p key={i}>
+    <p
+      key={i}
+      style={{
+        color: theme === 'dark' ? '#96e6ca' : ''
+      }}>
       {text}
     </p>
   ));
@@ -45,7 +53,9 @@ const Privacy = () => {
   });
 
   return (
-    <Section className="privacy">
+    <Section className="privacy" style={{
+      backgroundColor: theme !== 'dark' ? '#214e41' : ''
+    }}>
       <div className="privacy__text">
         {privacyContent}
       </div>

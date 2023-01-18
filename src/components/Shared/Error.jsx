@@ -13,13 +13,11 @@ const Img = styled.img`
   height: 50vh;
 `;
 
-const Error = () => {
-  return (
-    <Img
-      className="error-img"
-      src={errorImg}
-      alt="Error" />
-  )
-}
+const Error = () => (
+  <Img
+    className="error-img"
+    src={errorImg}
+    alt="Error" />
+)
 
 export default Error;

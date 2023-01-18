@@ -1,14 +1,21 @@
-import { useState, useEffect, useRef } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { useState, useEffect, useContext, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 
-import Logo from '../Shared/Logo';
-import Button from '../Shared/Button';
+import { ThemeContext } from 'src/context/ThemeContext';
+
+import Logo from '../shared/Logo';
+import Button from '../shared/Button';
+
+import { HeaderThemed } from 'src/theme/Header';
+import { NavLinkThemed } from 'src/theme/Header';
 
 import './header.scss';
 
 import logo from 'src/assets/images/logo.svg';
+import logoThemed from 'src/assets/images/logo-themed.svg';
 
 const Header = ({ setModal }) => {
+  const { theme, switchTheme } = useContext(ThemeContext);
 
   const linksData = [
     { label: 'Our Plan', url: '/plan' },
@@ -25,12 +32,12 @@ const Header = ({ setModal }) => {
     return (
       <li className="nav__item"
         key={i}>
-        <NavLink
-          className={({ isActive }) => isActive ? 'nav-link active-link' : 'nav-link'}
-          to={linkRef}>
+        <NavLinkThemed
+          to={linkRef}
+        >
           {linkText}
-        </NavLink>
-      </li>
+        </NavLinkThemed>
+      </li >
     )
   });
 
@@ -46,7 +53,7 @@ const Header = ({ setModal }) => {
   }
 
   useEffect(() => {
-    document.documentElement.style.overflow = `${showMenu ? 'hidden' : ''}`;
+    document.documentElement.style.overflow = `${showMenu ? 'hidden' : ''} `;
   }, [showMenu]);
 
   const location = useLocation();
@@ -55,25 +62,25 @@ const Header = ({ setModal }) => {
     setShowMenu(false);
   }, [location]);
 
-  const [theme, setTheme] = useState('light');
-  const bodyRef = useRef(document.body);
+  const headerRef = useRef();
 
   useEffect(() => {
-    bodyRef.current.setAttribute('data-theme', theme);
-  }, [theme]);
-
-  const changeTheme = () => {
-    bodyRef.current.getAttribute('data-theme') === 'light'
-      ? setTheme('dark')
-      : setTheme('light');
-  }
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 1) {
+        headerRef.current.style.cssText = 'padding: 10px 0; box-shadow: 0 3px 10px -2px rgba(255, 255, 255, .5);';
+      } else {
+        headerRef.current.style.cssText = '';
+      }
+    })
+    // eslint-disable-next-line
+  }, [window.scrollY])
 
   return (
-    <header className="header">
+    <HeaderThemed className="header" ref={headerRef}>
       <div className="container">
         <div className="header__body">
-          <Logo srcPath={logo} />
-          <nav className={`nav ${showMenu ? 'show' : ''}`}>
+          <Logo srcPath={theme === 'dark' ? logoThemed : logo} />
+          <nav className={`nav ${showMenu ? 'show' : ''} `}>
             <ul className="nav__list">
               {renderLinks}
             </ul>
@@ -82,15 +89,25 @@ const Header = ({ setModal }) => {
               <span></span>
             </button>
           </nav>
-          <input id="theme-switch" type="checkbox" />
+          <input
+            id="theme-switch"
+            type="checkbox"
+            defaultChecked={theme === 'dark'}
+          />
           <label
             className="theme-handler"
             htmlFor="theme-switch"
-            onClick={changeTheme}>
+            onClick={() => switchTheme(theme === 'dark' ? 'light' : 'dark')}
+            style={{
+              borderColor: theme === 'dark' ? '#77c1a7' : '#43806c'
+            }}
+          >
             <span className="theme-handler_lever"></span>
           </label>
           <div className="header__actions">
-            <Button text="Request a demo" onClick={handleModal} />
+            <Button
+              text="Request a demo"
+              onClick={handleModal} />
           </div>
           <button className="burger" onClick={handleMenu}>
             <span></span>
@@ -98,7 +115,7 @@ const Header = ({ setModal }) => {
           </button>
         </div>
       </div>
-    </header>
+    </HeaderThemed >
   )
 }
 

@@ -1,11 +1,13 @@
+import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import styled from 'styled-components';
 
-import CustomHelmet from '../Shared/CustomHelmet';
+import { ThemeContext } from 'src/context/ThemeContext';
 
-import Section from '../Shared/Section';
-import SectionInfo from '../Shared/SectionInfo';
+import Section from '../shared/Section';
+import SectionInfo from '../shared/SectionInfo';
+
+import { InputError } from '../shared/InputError';
 
 import './hero.scss';
 
@@ -13,14 +15,8 @@ import benefitIcon1 from 'src/assets/images/hero/hero-benefit-icon-1.svg';
 import benefitIcon2 from 'src/assets/images/hero/hero-benefit-icon-2.svg';
 import benefitIcon3 from 'src/assets/images/hero/hero-benefit-icon-3.svg';
 
-export const InputError = styled.span`
-  font-size: 12px;
-  font-weight: 600;
-  color: crimson;
-  margin: 5px 0 0 17px;
-`;
-
 const Hero = () => {
+  const { theme } = useContext(ThemeContext);
 
   const heroBenefitsData = [
     {
@@ -52,10 +48,16 @@ const Hero = () => {
           src={benefitIcon}
           alt="Benefit" />
         <div className="hero__benefit-info">
-          <h5 className="hero__benefit-title">
+          <h5 className="hero__benefit-title"
+            style={{
+              color: theme === 'dark' ? '#96e6ca' : ''
+            }}>
             {benefitTitle}
           </h5>
-          <p className="hero__benefit-text">
+          <p className="hero__benefit-text"
+            style={{
+              color: theme === 'dark' ? '#fff' : ''
+            }}>
             {benefitText}
           </p>
         </div>
@@ -64,49 +66,74 @@ const Hero = () => {
   });
 
   const navigate = useNavigate();
-  const { register, handleSubmit, reset, formState: { errors } } = useForm();
+  const { register, handleSubmit, reset, clearErrors, formState: { errors } } = useForm();
 
   const onSubmitForm = data => {
     navigate('/confirmed');
     reset();
+    alert(JSON.stringify(data));
   }
 
-  return (
-    <>
-      <CustomHelmet title="Brella" />
+  useEffect(() => {
+    if (Object.keys(errors).length > 0) {
+      setTimeout(() => {
+        clearErrors();
+      }, 2000)
+    }
+  })
 
-      <Section className="hero">
-        <SectionInfo
-          className="hero__info"
-          isSubtitle={false}
-          title="Give your team peace of mind with supplemental health insurance from Brella.">
-          <p className="hero__text">
-            I'm wondering...
-          </p>
-          <form className="form" onSubmit={handleSubmit(onSubmitForm)}>
-            <label className="form-label">
-              <input
-                className="form-input"
-                placeholder="Enter your request"
-                {...register('search', {
-                  required: !0
-                })}
-              />
-              {errors.search && <InputError>This field is required</InputError>}
-            </label>
-            <button
-              className="main-link"
-              type="submit"
-            >
-              Find out
-            </button>
-          </form>
-        </SectionInfo>
-        <div className="hero__benefits">
-          {heroBenefitsList}
-        </div>
-      </Section>
-    </>
+  const themedSection = theme === 'dark' ? {
+    backgroundColor: 'rgba(0, 0, 0, .6)',
+    backgroundBlendMode: 'color'
+  } : null;
+
+  return (
+    <Section className="hero" style={themedSection}>
+      <SectionInfo
+        className="hero__info"
+        isSubtitle={false}
+        title="Give your team peace of mind with supplemental health insurance from Brella.">
+        <p
+          className="hero__text"
+          style={{
+            color: theme === 'dark' ? '#fff' : ''
+          }}>
+          I'm wondering...
+        </p>
+        <form className="form" onSubmit={handleSubmit(onSubmitForm)}>
+          <label className="form-label">
+            <input
+              className="form-input"
+              placeholder="Enter your request"
+              style={{
+                background: theme === 'dark' ? '#151515' : '',
+                color: theme === 'dark' ? '#fff' : ''
+              }}
+              {...register('search', {
+                required: !0
+              })}
+            />
+            {errors.search && <InputError>This field is required</InputError>}
+          </label>
+          <button
+            className="main-link"
+            type="submit"
+            style={{
+              color: theme === 'dark' ? '#214e41' : '',
+              background: theme === 'dark' ? '#96e6ca' : ''
+            }}
+          >
+            Find out
+          </button>
+        </form>
+      </SectionInfo>
+      <div className="hero__benefits"
+        style={{
+          background: theme === 'dark' ? '#151515' : ''
+        }}>
+        {heroBenefitsList}
+      </div>
+    </Section>
   );
 };
 

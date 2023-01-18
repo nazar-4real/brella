@@ -1,8 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper';
 
-import Section from '../Shared/Section';
+import { ThemeContext } from 'src/context/ThemeContext';
+
+import Section from '../shared/Section';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -60,6 +62,8 @@ const slidesData = [
 ];
 
 const Pride = () => {
+  const { theme } = useContext(ThemeContext);
+
   const [swiper, setSwiper] = useState();
   const prevElRef = useRef();
   const nextElRef = useRef();
@@ -85,7 +89,9 @@ const Pride = () => {
 
   return (
     <Section className="pride">
-      <h2 className="main-title">
+      <h2 className="main-title" style={{
+        color: theme === 'dark' ? '#96e6ca' : ''
+      }}>
         Proudly backed by
       </h2>
       <div className="pride__slider">

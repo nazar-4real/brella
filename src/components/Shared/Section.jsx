@@ -1,19 +1,27 @@
-const Section = ({ className, isContainer = true, children, style }) => (
-  <section className={`section ${className}`} style={style}>
-    {
-      isContainer ? (
-        <div className="container">
+import styled from 'styled-components';
+
+const ThemedSection = styled.section.attrs({ className: 'section' })`
+  background-color: ${(props) => props.theme.background}
+`;
+
+const Section = ({ className, isContainer = true, children, style }) => {
+  return (
+    <ThemedSection className={`section ${className}`} style={style}>
+      {
+        isContainer ? (
+          <div className="container">
+            <div className={`${className}__body`}>
+              {children}
+            </div>
+          </div>
+        ) : (
           <div className={`${className}__body`}>
             {children}
           </div>
-        </div>
-      ) : (
-        <div className={`${className}__body`}>
-          {children}
-        </div>
-      )
-    }
-  </section>
-)
+        )
+      }
+    </ThemedSection>
+  )
+}
 
 export default Section;

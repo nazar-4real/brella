@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ErrorBoundary from '../shared/ErrorBoundary';
 
 import { ThemeStore } from 'src/context/ThemeContext';
-import Themes from '../shared/Themes';
 
 import Layout from '../Layout';
 import Page404 from '../shared/Page404';
@@ -17,6 +16,7 @@ import BrokersPage from 'src/pages/BrokersPage';
 import MembersPage from 'src/pages/MembersPage';
 import AboutPage from 'src/pages/AboutPage';
 import BlogPage from 'src/pages/BlogPage';
+import ContactPage from 'src/pages/ContactPage';
 
 import 'src/assets/styles/global.scss';
 
@@ -34,23 +34,22 @@ const App = () => {
       <div className="app">
         <ErrorBoundary>
           <ThemeStore>
-            <Themes>
-              <Router>
-                <Routes>
-                  <Route path='/' element={<Layout />}>
-                    <Route index element={<HomePage />} />
-                    <Route path='plan' element={<PlanPage />} />
-                    <Route path='employers' element={<EmployersPage />} />
-                    <Route path='brokers' element={<BrokersPage />} />
-                    <Route path='members' element={<MembersPage />} />
-                    <Route path='about' element={<AboutPage />} />
-                    <Route path='blog' element={<BlogPage />} />
-                    <Route path='confirmed' element={<Confirmed />} />
-                    <Route path='*' element={<Page404 />} />
-                  </Route>
-                </Routes>
-              </Router>
-            </Themes>
+            <Router>
+              <Routes>
+                <Route path='/' element={<Layout />}>
+                  <Route index element={<HomePage />} />
+                  <Route path='plan' element={<PlanPage />} />
+                  <Route path='employers' element={<EmployersPage />} />
+                  <Route path='brokers' element={<BrokersPage />} />
+                  <Route path='members' element={<MembersPage />} />
+                  <Route path='about' element={<AboutPage />} />
+                  <Route path='blog' element={<BlogPage />} />
+                  <Route path='contact' element={<ContactPage />} />
+                  <Route path='confirmed' element={<Confirmed />} />
+                  <Route path='*' element={<Page404 />} />
+                </Route>
+              </Routes>
+            </Router>
           </ThemeStore>
         </ErrorBoundary>
       </div>

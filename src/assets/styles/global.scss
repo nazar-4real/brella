@@ -54,6 +54,11 @@ button {
   cursor: pointer;
 }
 
+label {
+  display: block;
+  line-height: 0;
+}
+
 input,
 textarea {
   @include insertFont("Raleway", 16px, 22px);

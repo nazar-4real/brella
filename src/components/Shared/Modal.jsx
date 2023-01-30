@@ -47,7 +47,8 @@ const Modal = ({ isOpen, setModal }) => {
     return () => {
       document.body.removeEventListener('keydown', closeOnEscape);
     }
-  }, [setModal]);
+    // eslint-disable-next-line
+  }, [isOpen]);
 
   const closeModal = (e) => {
     (e.target.matches('.modal') || e.target.closest('.modal-close')) && setModal(false);
@@ -57,10 +58,15 @@ const Modal = ({ isOpen, setModal }) => {
 
   const navigate = useNavigate();
 
-  const onSubmit = () => {
-    reset();
-    setModal(false);
-    navigate('/confirmed');
+  const onSubmit = data => {
+    const isCorrectData = window.confirm('Your data is correct?\n' + JSON.stringify(data));
+    if (isCorrectData) {
+      reset();
+      setModal(false);
+      navigate('/confirmed');
+    } else {
+      setModal(true);
+    }
   }
 
   useEffect(() => {

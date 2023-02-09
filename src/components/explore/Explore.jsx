@@ -15,7 +15,9 @@ const Explore = () => {
 
   return (
     <Section className="explore" isContainer={false}>
-      <div className="explore__picture">
+      <div className="explore__picture" style={{
+        backgroundColor: theme === 'dark' ? 'rgba(0, 0, 0, .6)' : ''
+      }}>
         <img className="explore__img" src={exploreImg} alt="" />
       </div>
       <SectionInfo
@@ -23,7 +25,7 @@ const Explore = () => {
         isSubtitle={false}
         title="Ready to explore Brella’s supplemental health solution?"
         style={{
-          background: theme === 'dark' ? '#214e41' : ''
+          background: theme === 'dark' ? '#052f23' : ''
         }}>
         <h2
           className="main-title"

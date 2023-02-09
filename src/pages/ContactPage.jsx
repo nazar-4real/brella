@@ -1,18 +1,34 @@
+import { useContext } from 'react'
+
+import { ThemeContext } from 'src/context/ThemeContext'
+
 import CustomHelmet from 'src/components/shared/CustomHelmet'
 
 import Section from 'src/components/shared/Section'
-import SectionSubtitle from 'src/components/shared/SectionSubtitle'
 import FormField from 'src/components/shared/FormField'
 
 const ContactPage = () => {
+
+  const { theme } = useContext(ThemeContext);
+
   return (
     <>
       <CustomHelmet title="Contact" />
 
       <Section className="contact">
-        <mark style={{ padding: '30px', display: 'block', width: 'fit-content', margin: '0 auto 20px' }}>Under development...</mark>
 
-        {/* <SectionSubtitle subtitleText="Contact" />
+        <mark style={{
+          padding: '30px',
+          display: 'block',
+          width: 'fit-content',
+          margin: '0 auto'
+        }}>
+          It is bein developed...
+        </mark>
+
+        {/* <h2 className="main-title">
+          Contact
+        </h2>
         <p className="main-text">
           Give us your contact details and we will contact you as soon as possible
         </p>
@@ -29,6 +45,10 @@ const ContactPage = () => {
             <textarea
               className="contact__form-textarea"
               placeholder="Enter your comment"
+              style={{
+                background: theme === 'dark' ? '#151515' : '#fff',
+                color: theme === 'dark' ? '#96e6ca' : '#214e41'
+              }}
             ></textarea>
           </label>
           <button className="main-link contact__form-submit">

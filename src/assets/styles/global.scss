@@ -411,3 +411,42 @@ textarea {
     }
   }
 }
+
+// Contact page
+
+// .contact {
+//   padding: 50px 0 100px;
+
+//   .main-title {
+//     margin-bottom: 15px;
+//   }
+
+//   .main-text {
+//     max-width: 500px;
+//   }
+
+//   &__form {
+//     margin-top: 30px;
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     grid-template-rows: repeat(3, 1fr);
+//     gap: 25px;
+
+//     // .form-label:has(.contact__form-textarea),
+//     // &-submit {
+//     //   grid-column: 1 / -1;
+//     // }
+
+//     .form-label:has(.contact__form-textarea) {
+//       grid-area: 1 / 2 / -1 / 3;
+//     }
+
+//     &-textarea {
+//       height: 100%;
+//     }
+
+//     &-submit {
+//       height: 54px;
+//     }
+//   }
+// }

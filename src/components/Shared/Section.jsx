@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 const ThemedSection = styled.section.attrs({ className: 'section' })`
-  background-color: ${(props) => props.theme.background}
+  background-color: ${(props) => props.theme.background};
 `;
 
 const Section = ({ className, isContainer = true, children, style }) => {
+
   return (
     <ThemedSection className={`section ${className}`} style={style}>
       {

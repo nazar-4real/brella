@@ -20,8 +20,7 @@ const About = () => {
       className="about"
       style={{
         background: theme === 'dark' ? '#151515' : ''
-      }}
-    >
+      }}>
       <SectionInfo
         className="about__info"
         subtitle="Why Brella?"

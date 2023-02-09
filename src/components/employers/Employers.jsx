@@ -16,7 +16,9 @@ const Employers = () => {
   const themedSection = theme === 'dark' ? {
     backgroundColor: 'rgba(0, 0, 0, .6)',
     backgroundBlendMode: 'color'
-  } : null;
+  } : {
+    backgroundColor: 'transparent'
+  };
 
   return (
     <Section className="employers" style={themedSection}>

@@ -1,15 +1,8 @@
-import { useContext } from 'react'
-
-import { ThemeContext } from 'src/context/ThemeContext'
-
 import CustomHelmet from 'src/components/shared/CustomHelmet'
 
 import Section from 'src/components/shared/Section'
-import FormField from 'src/components/shared/FormField'
 
 const ContactPage = () => {
-
-  const { theme } = useContext(ThemeContext);
 
   return (
     <>

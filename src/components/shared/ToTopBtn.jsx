@@ -1,5 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { createPortal } from 'react-dom';
+
+import { ThemeContext } from 'src/context/ThemeContext';
 
 import 'src/assets/styles/global.scss';
 
@@ -27,10 +29,12 @@ const ToTopBtn = () => {
     })
   };
 
+  const { theme } = useContext(ThemeContext)
+
   return createPortal(
     <>
       {show ? (
-        <button className="totop-btn" onClick={toTop}>
+        <button className="totop-btn" onClick={toTop} style={{ background: theme === 'dark' ? 'rgb(150, 230, 202)' : '' }}>
           <img className="totop-btn__icon" src={arrow} alt="To top" />
         </button >
       ) : null}

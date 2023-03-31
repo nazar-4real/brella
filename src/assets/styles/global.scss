@@ -56,7 +56,8 @@ button {
 
 label {
   display: block;
-  line-height: 0;
+  border-radius: 5px;
+  position: relative;
 }
 
 input,
@@ -64,21 +65,10 @@ textarea {
   @include insertFont("Raleway", 16px, 22px);
   width: 100%;
   border: 1px solid $greenColor;
-  border-radius: 5px;
+  border-radius: inherit;
   padding: 15px 20px;
   outline: none;
   transition: all 0.3s;
-
-  &:focus {
-    box-shadow: 0 0 10px -1px $greenLightColor;
-    transform: scale(1.01);
-  }
-
-  @media (max-width: 768px) {
-    padding: 7px 12px;
-    font-size: 12px;
-    line-height: 17px;
-  }
 }
 
 textarea {
@@ -115,8 +105,8 @@ textarea {
 }
 
 .nav-link {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 15px;
+  line-height: 22px;
   font-weight: 700;
   color: $greenColor;
   transition: all 0.3s;
@@ -150,8 +140,21 @@ textarea {
 
   @media (max-width: 768px) {
     padding: 7px 12px;
-    font-size: 12px;
-    line-height: 17px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.section-subtitle {
+  @include insertFont("Raleway", 13px, 20px);
+  color: $greenColor;
+  text-transform: uppercase;
+  letter-spacing: 0.05px;
+  margin-bottom: 20px;
+
+  @media (width <= 768px) {
+    font-size: 15px;
+    line-height: 22px;
   }
 }
 
@@ -161,8 +164,8 @@ textarea {
   margin-bottom: 34px;
 
   @media (max-width: 768px) {
-    font-size: 25px;
-    line-height: 32px;
+    font-size: 30px;
+    line-height: 38px;
     margin-bottom: 10px;
   }
 }
@@ -173,17 +176,9 @@ textarea {
   color: $grayColor;
 
   @media (max-width: 768px) {
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 19px;
+    line-height: 27px;
   }
-}
-
-.section-subtitle {
-  @include insertFont("Raleway", 13px, 20px);
-  color: $greenColor;
-  text-transform: uppercase;
-  letter-spacing: 0.05px;
-  margin-bottom: 20px;
 }
 
 .section-link {
@@ -201,7 +196,7 @@ textarea {
   }
 
   @media (max-width: 768px) {
-    font-size: 15px;
+    font-size: 20px;
     padding-bottom: 7px;
   }
 }
@@ -213,8 +208,8 @@ textarea {
   top: 0;
   left: 0;
   z-index: 99;
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  height: 100%;
   background: rgba($blackColor, 0.7);
   display: grid;
   place-items: center;
@@ -222,7 +217,7 @@ textarea {
   &-dialog {
     background: $whiteColor;
     padding: 40px;
-    max-width: 55%;
+    max-width: 600px;
     width: 100%;
     position: relative;
     border-radius: 5px;
@@ -233,22 +228,15 @@ textarea {
     }
 
     @media (max-width: 768px) {
-      max-width: 65%;
-      padding: 30px;
-      margin-top: -10vh;
-    }
-
-    @media (max-width: 575px) {
-      max-width: 80%;
-    }
-
-    @media (max-width: 375px) {
-      max-width: 95%;
+      max-width: 90%;
+      padding: 40px 25px 25px;
     }
   }
 
   .main-title {
     margin-bottom: 20px;
+    font-size: 28px;
+    line-height: 37px;
 
     @media (max-width: 991px) {
       font-size: 30px;
@@ -256,32 +244,43 @@ textarea {
     }
 
     @media (max-width: 768px) {
-      font-size: 22px;
-      line-height: 28px;
-      margin-bottom: 10px;
+      font-size: 27px;
+      line-height: 38px;
+      margin-bottom: 15px;
     }
   }
 
   .form {
     display: flex;
     flex-direction: column;
+    gap: 15px;
+
+    @media (width <= 768px) {
+      gap: 10px;
+    }
 
     &-label {
-      margin-bottom: 15px;
       position: relative;
+    }
 
-      @media (max-width: 768px) {
-        margin-bottom: 10px;
+    &-input {
+      font-size: 16px;
+      line-height: 24px;
+      padding: 12px 20px;
+
+      @media (width <= 768px) {
+        padding: 10px 15px;
+      }
+
+      &:focus {
+        box-shadow: 0 0 10px -1px $greenLightColor;
+        transform: scale(1.01);
       }
     }
   }
 
   .main-link {
-    height: 54px;
-
-    @media (max-width: 768px) {
-      height: unset;
-    }
+    height: 42px;
   }
 
   &-close {
@@ -294,8 +293,8 @@ textarea {
     @media (max-width: 768px) {
       width: 25px;
       height: 25px;
-      top: 10px;
-      right: 10px;
+      top: 15px;
+      right: 15px;
     }
 
     span {
@@ -325,7 +324,7 @@ textarea {
   position: fixed;
   bottom: 70px;
   right: 70px;
-  z-index: 100;
+  z-index: 50;
   width: 50px;
   height: 50px;
   border: 1px solid $greenLightColor;
@@ -340,12 +339,10 @@ textarea {
   @media (max-width: 991px) {
     bottom: 40px;
     right: 30px;
-    width: 40px;
-    height: 40px;
   }
 
   &__icon {
-    transform: rotate(-90deg);
+    transform: rotate(-0.25turn);
     width: 40%;
     height: 40%;
     object-fit: contain;

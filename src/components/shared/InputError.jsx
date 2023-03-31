@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
 export const InputError = styled.span`
+  display: inline-block;
   font-size: 12px;
   font-weight: 600;
   color: crimson;
-  margin: 5px 0 0 17px;
+  transform: translate(20px, 2px);
 `;

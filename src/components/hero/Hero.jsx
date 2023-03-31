@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
@@ -66,21 +66,13 @@ const Hero = () => {
   });
 
   const navigate = useNavigate();
-  const { register, handleSubmit, reset, clearErrors, formState: { errors } } = useForm();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
   const onSubmitForm = data => {
     navigate('/confirmed');
     reset();
     alert(JSON.stringify(data));
   }
-
-  useEffect(() => {
-    if (Object.keys(errors).length > 0) {
-      setTimeout(() => {
-        clearErrors();
-      }, 2000)
-    }
-  })
 
   const themedSection = theme === 'dark' ? {
     backgroundColor: 'rgba(0, 0, 0, .6)',

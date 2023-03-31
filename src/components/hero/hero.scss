@@ -33,6 +33,11 @@
     height: 60px;
     width: 100%;
 
+    &:focus-within {
+      box-shadow: 0 0 10px -1px $greenLightColor;
+      transform: scale(1.01);
+    }
+
     &-label {
       display: inline-block;
       max-width: 280px;
@@ -54,7 +59,7 @@
     }
 
     .main-link {
-      flex: 1 0 auto;
+      flex: 1 0;
       border-radius: 0 6px 6px 0;
     }
   }
@@ -105,7 +110,7 @@
 
 @media (max-width: 991px) {
   .hero {
-    padding-top: 110px;
+    padding-top: 100px;
 
     &__info {
       max-width: 80%;
@@ -123,13 +128,18 @@
 
 @media (max-width: 768px) {
   .hero {
-    height: 600px;
-
     &__info {
       max-width: 100%;
     }
 
     .main-title {
+      font-size: 33px;
+      line-height: 41px;
+      margin-bottom: 25px;
+    }
+
+    .hero__text {
+      font-size: 19px;
       margin-bottom: 25px;
     }
 
@@ -137,10 +147,15 @@
       padding: 7px 20px;
     }
 
+    .form-input {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
     &__benefits {
       flex-direction: column;
       align-items: unset;
-      padding: 30px 20px;
+      padding: 35px 25px;
     }
 
     &__benefit {
@@ -152,8 +167,8 @@
     }
 
     &__benefit-icon {
-      height: 30px;
-      max-width: 30px;
+      height: 35px;
+      max-width: 35px;
     }
 
     &__benefit-info {
@@ -161,7 +176,14 @@
     }
 
     &__benefit-title {
-      margin-bottom: 3px;
+      font-size: 19px;
+      line-height: 27px;
+      margin-bottom: 5px;
+    }
+
+    &__benefit-text {
+      font-size: 17px;
+      line-height: 25px;
     }
   }
 }

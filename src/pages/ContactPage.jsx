@@ -23,7 +23,7 @@ const ContactPage = () => {
           width: 'fit-content',
           margin: '0 auto'
         }}>
-          It is bein developed...
+          Under development...
         </mark>
 
         {/* <h2 className="main-title">

@@ -2,8 +2,18 @@
 @import "../../assets/styles/mixins.scss";
 
 .employers {
+  position: relative;
   background: url(../../assets/images/employers/employers-img.jpg) center /
     cover no-repeat;
+
+  @media (width <= 768px) {
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      backdrop-filter: blur(15px);
+    }
+  }
 
   &__body {
     position: relative;

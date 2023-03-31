@@ -26,7 +26,9 @@ const Employers = () => {
         className="employers__info"
         subtitle="for employers"
         title="Easy enrollment meets simple administration.">
-        <Text>
+        <Text style={{
+          color: theme !== 'dark' && window.matchMedia('(max-width: 768px)').matches ? '#222' : ''
+        }}>
           Brella brings 100% paperless implementation, enrollment, and admin. Plug into our platforms or we’ll plug into yours.
         </Text>
         <SectionLink text="Learn more" />

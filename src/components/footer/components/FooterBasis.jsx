@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
@@ -105,20 +105,12 @@ const FooterBasis = () => {
   });
 
   const navigate = useNavigate();
-  const { register, handleSubmit, reset, clearErrors, formState: { errors } } = useForm();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
   const onSubmitForm = () => {
     navigate('/confirmed');
     reset();
   }
-
-  useEffect(() => {
-    if (Object.keys(errors).length > 0) {
-      setTimeout(() => {
-        clearErrors();
-      }, 2000)
-    }
-  })
 
   return (
     <Section className="footer-basis" style={{
@@ -143,8 +135,7 @@ const FooterBasis = () => {
               className="form-input"
               placeholder="Email*"
               {...register('email', {
-                required: !0,
-                minLength: 5
+                required: !0
               })}
             />
             {errors.email && <InputError>Not enough characters</InputError>}

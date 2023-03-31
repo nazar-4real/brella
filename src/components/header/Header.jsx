@@ -64,21 +64,8 @@ const Header = ({ setModal }) => {
     setShowMenu(false);
   }, [location]);
 
-  const headerRef = useRef();
-
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 1) {
-        headerRef.current.style.cssText = 'padding: 10px 0; box-shadow: 0 3px 10px -2px rgba(255, 255, 255, .5);';
-      } else {
-        headerRef.current.style.cssText = '';
-      }
-    })
-    // eslint-disable-next-line
-  }, [window.scrollY])
-
   return (
-    <HeaderThemed className="header" ref={headerRef}>
+    <HeaderThemed className="header">
       <div className="container">
         <div className="header__body">
           <Logo srcPath={theme === 'dark' ? logoThemed : logo} />

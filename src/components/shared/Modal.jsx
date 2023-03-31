@@ -11,18 +11,7 @@ import { ModalDialog } from 'src/theme/ModalDialog';
 import { Title } from 'src/theme/Title';
 import FormField from './FormField';
 
-const Error = styled.span`
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
-  color: crimson;
-  margin: -13px 0 10px;
-
-  @media (max-width: 768px) {
-    margin-top: -8px;
-    font-size: 8px;
-  }
-`;
+import { InputError } from './InputError';
 
 const CloseBtn = styled.button.attrs({ className: 'modal-close' })`
   span {
@@ -33,19 +22,26 @@ const CloseBtn = styled.button.attrs({ className: 'modal-close' })`
 const Modal = ({ isOpen, setModal }) => {
   const { theme } = useContext(ThemeContext);
 
+  const bodyRef = useRef(document.body);
+  const bodyComp = bodyRef.current;
+
   useEffect(() => {
-    if (window.matchMedia('(min-width: 992px)').matches) {
-      document.documentElement.style.overflow = `${isOpen ? 'hidden' : ''}`;
-      document.body.style.marginRight = `${isOpen ? '7px' : ''}`;
-    }
+    bodyComp.style.overflow = `${isOpen ? 'hidden' : ''}`;
+    window.matchMedia('(min-width: 991px)').matches && (
+      bodyComp.style.cssText = (isOpen ? `
+        margin-right: 7px;
+        overflow: hidden;
+      ` : ``)
+    );
+    // eslint-disable-next-line
   }, [isOpen]);
 
   useEffect(() => {
     const closeOnEscape = e => e.key === 'Escape' ? setModal(false) : null;
-    document.body.addEventListener('keydown', closeOnEscape);
+    bodyComp.addEventListener('keydown', closeOnEscape);
 
     return () => {
-      document.body.removeEventListener('keydown', closeOnEscape);
+      bodyComp.removeEventListener('keydown', closeOnEscape);
     }
     // eslint-disable-next-line
   }, [isOpen]);
@@ -54,7 +50,7 @@ const Modal = ({ isOpen, setModal }) => {
     (e.target.matches('.modal') || e.target.closest('.modal-close')) && setModal(false);
   }
 
-  const { register, handleSubmit, reset, clearErrors, formState: { errors } } = useForm();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
   const navigate = useNavigate();
 
@@ -68,14 +64,6 @@ const Modal = ({ isOpen, setModal }) => {
       setModal(true);
     }
   }
-
-  useEffect(() => {
-    if (Object.keys(errors).length > 0) {
-      setTimeout(() => {
-        clearErrors();
-      }, 2000)
-    }
-  })
 
   useEffect(() => {
     reset();
@@ -108,22 +96,21 @@ const Modal = ({ isOpen, setModal }) => {
                 type="text"
                 name="name"
                 placeholder="Enter your name..."
+                fieldError={errors.name && <InputError>This field is mandatory</InputError>}
                 {...rest}
                 ref={(e) => {
                   ref(e);
                   inputRef.current = e;
                 }}
               />
-              {errors.name && <Error>The field is mandatory</Error>}
               <FormField
                 type="email"
                 name="email"
                 placeholder="Enter your email..."
+                fieldError={errors.email && <InputError>Incorrect email</InputError>}
                 {...register('email', {
-                  required: !0,
-                  minLength: 3
+                  required: !0
                 })} />
-              {errors.email && <Error>The field is mandatory</Error>}
               <label className="form-label">
                 <textarea
                   className="form-input"
@@ -135,8 +122,8 @@ const Modal = ({ isOpen, setModal }) => {
                   {...register('comment', {
                     required: !0
                   })} />
+                {errors.comment && <InputError>The field is mandatory</InputError>}
               </label>
-              {errors.comment && <Error>The field is mandatory</Error>}
               <button
                 className="main-link"
                 type="submit"

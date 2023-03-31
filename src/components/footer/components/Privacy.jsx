@@ -21,7 +21,7 @@ const Privacy = () => {
       refUrl: '/privacy',
     },
     {
-      nameUrl: 'Terms of Service',
+      nameUrl: 'Terms',
       refUrl: '/terms'
     }
   ];

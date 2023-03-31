@@ -72,6 +72,11 @@
     height: 52px;
     border: 1px solid $whiteColor;
 
+    &:focus-within {
+      box-shadow: 0 0 10px -1px $whiteColor;
+      transform: scale(1.01);
+    }
+
     &-label {
       display: inline-block;
       flex-grow: 1;
@@ -223,11 +228,11 @@
     }
 
     &-basis__column-title {
-      margin-bottom: 10px;
+      margin-bottom: 18px;
     }
 
     &-nav__link + &-nav__link {
-      margin-top: 10px;
+      margin-top: 18px;
     }
 
     .privacy {
@@ -260,10 +265,39 @@
 }
 
 @media (max-width: 768px) {
+  .footer {
+    .logo {
+      width: 85px;
+      height: auto;
+    }
+
+    &-basis__column-title {
+      font-size: 20px;
+      line-height: 27px;
+    }
+
+    &-nav__link {
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    &-text {
+      font-size: 17px;
+      line-height: 25px;
+    }
+
+    .form-input {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
   .privacy__text {
+    font-size: 17px;
+    line-height: 25px;
+
     p {
       text-align: justify;
-      text-align-last: center;
     }
 
     p + p {
@@ -273,5 +307,7 @@
 
   .copyright {
     margin-top: 30px !important;
+    font-size: 17px;
+    line-height: 25px;
   }
 }

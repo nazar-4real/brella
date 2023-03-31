@@ -110,20 +110,20 @@ const Pride = () => {
           }}
           centeredSlides
           breakpoints={{
-            991: {
-              slidesPerView: 5
-            },
-            768: {
-              slidesPerView: 4
+            320: {
+              slidesPerView: 1
             },
             575: {
-              slidesPerView: 3
-            },
-            375: {
               slidesPerView: 2
             },
-            300: {
-              slidesPerView: 1
+            768: {
+              slidesPerView: 3
+            },
+            991: {
+              slidesPerView: 4
+            },
+            1024: {
+              slidesPerView: 5
             }
           }}
         >

@@ -18,6 +18,7 @@ const FormField = forwardRef(({ ...props }, ref) => (
       className="form-input"
       ref={ref}
       {...props} />
+    {props.fieldError}
   </label>
 ))
 

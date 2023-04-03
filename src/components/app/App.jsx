@@ -6,7 +6,6 @@ import ErrorBoundary from '../shared/ErrorBoundary';
 import { ThemeStore } from 'src/context/ThemeContext';
 
 import Layout from '../Layout';
-import Page404 from '../shared/Page404';
 import Confirmed from '../shared/Confirmed';
 
 import HomePage from 'src/pages/HomePage';
@@ -17,6 +16,7 @@ import MembersPage from 'src/pages/MembersPage';
 import AboutPage from 'src/pages/AboutPage';
 import BlogPage from 'src/pages/BlogPage';
 import ContactPage from 'src/pages/ContactPage';
+import NotFoundPage from 'src/pages/NotFoundPage';
 
 import 'src/assets/styles/global.scss';
 
@@ -46,7 +46,7 @@ const App = () => {
                   <Route path='blog' element={<BlogPage />} />
                   <Route path='contact' element={<ContactPage />} />
                   <Route path='confirmed' element={<Confirmed />} />
-                  <Route path='*' element={<Page404 />} />
+                  <Route path='*' element={<NotFoundPage />} />
                 </Route>
               </Routes>
             </Router>

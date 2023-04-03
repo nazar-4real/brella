@@ -55,7 +55,13 @@ const Modal = ({ isOpen, setModal }) => {
   const navigate = useNavigate();
 
   const onSubmit = data => {
-    const isCorrectData = window.confirm('Your data is correct?\n' + JSON.stringify(data));
+
+    const formatData = Object.entries(data)
+      .map(([key, value]) => `${key[0].toUpperCase() + key.slice(1)}: ${value}`)
+      .join('\n');
+
+    const isCorrectData = window.confirm('Your data is correct?\n' + formatData);
+
     if (isCorrectData) {
       reset();
       setModal(false);
@@ -117,7 +123,7 @@ const Modal = ({ isOpen, setModal }) => {
                   placeholder="Enter your comment..."
                   style={{
                     background: theme === 'dark' ? '#151515' : '',
-                    color: theme === 'dark' ? '#96e6ca' : ''
+                    color: theme === 'dark' ? '#96e6ca' : '#214e41'
                   }}
                   {...register('comment', {
                     required: !0

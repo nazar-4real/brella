@@ -27,11 +27,7 @@ const Privacy = () => {
   ];
 
   const privacyContent = privacyText.map((text, i) => (
-    <p
-      key={i}
-      style={{
-        color: theme === 'dark' ? '#96e6ca' : ''
-      }}>
+    <p key={i}>
       {text}
     </p>
   ));
@@ -54,7 +50,8 @@ const Privacy = () => {
 
   return (
     <Section className="privacy" style={{
-      backgroundColor: theme !== 'dark' ? '#214e41' : ''
+      backgroundColor: theme !== 'dark' ? '#214e41' : '',
+      color: theme === 'dark' ? '#96e6ca' : ''
     }}>
       <div className="privacy__text">
         {privacyContent}
@@ -64,7 +61,7 @@ const Privacy = () => {
           © {date} Brella Insurance Inc. All Rights Reserved.
           <br />
           Developed by <a href="https://github.com/nazar-4real" target="_blank" rel="noreferrer noopener">
-            nazar-4real
+            Nazar Marusyk
           </a>
         </p>
         <ul className="copyright__links">

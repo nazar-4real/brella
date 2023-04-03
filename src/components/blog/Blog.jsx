@@ -7,6 +7,7 @@ import Spinner from '../shared/Spinner';
 
 import { Title } from 'src/theme/Title';
 import { Text } from 'src/theme/Text';
+import { LazyImage } from '../shared/LazyImage';
 
 import './blog.scss';
 
@@ -39,7 +40,7 @@ const Blog = () => {
         className="blog__card"
         key={i}>
         <div className="blog__card-picture">
-          <img
+          <LazyImage
             className="blog__card-img"
             src={blogImages[i]}
             alt="Article about some event" />

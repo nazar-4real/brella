@@ -5,6 +5,7 @@ import { ThemeContext } from 'src/context/ThemeContext';
 import Section from '../shared/Section';
 import SectionInfo from '../shared/SectionInfo';
 import Button from '../shared/Button';
+import { LazyImage } from '../shared/LazyImage';
 
 import './explore.scss';
 
@@ -15,16 +16,15 @@ const Explore = () => {
 
   return (
     <Section className="explore" isContainer={false}>
-      <div className="explore__picture" style={{
-        backgroundColor: theme === 'dark' ? 'rgba(0, 0, 0, .6)' : ''
-      }}>
-        <img
+      <div className="explore__picture">
+        <LazyImage
           className="explore__img"
           src={exploreImg}
           alt="Explore this topic"
           style={{
-            filter: `brightness(${theme === 'dark' ? '.6' : 1})`
-          }} />
+            filter: `brightness(${theme === 'dark' ? .6 : 1})`
+          }}
+        />
       </div>
       <SectionInfo
         className="explore__info"

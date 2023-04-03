@@ -46,10 +46,6 @@
   }
 }
 
-#theme-switch {
-  display: none;
-}
-
 .theme-handler {
   margin-left: 40px;
   width: 50px;
@@ -62,6 +58,10 @@
   flex-shrink: 0;
   overflow: hidden;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+  #theme-switch {
+    display: none;
+  }
 
   &_lever {
     width: 20px;
@@ -96,25 +96,25 @@
       transform: translate(-50%, -50%) rotate(-90deg);
     }
   }
-}
 
-#theme-switch:checked + .theme-handler {
-  background: rgba($greenColor, 0.5);
-}
-
-#theme-switch:checked + .theme-handler > .theme-handler_lever {
-  left: calc(95% - 20px);
-  background: $greenColor;
-  border-color: $greenLighterColor;
-
-  &::before {
-    opacity: 0;
-    transform: translate(-50%, -50%) rotate(90deg);
+  &:has(:checked) .theme-handler {
+    background: rgba($greenColor, 0.5);
   }
 
-  &::after {
-    opacity: 1;
-    transform: translate(-50%, -50%) rotate(0);
+  &:has(:checked) .theme-handler_lever {
+    left: calc(95% - 20px);
+    background: $greenColor;
+    border-color: $greenLighterColor;
+
+    &::before {
+      opacity: 0;
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    &::after {
+      opacity: 1;
+      transform: translate(-50%, -50%) rotate(0);
+    }
   }
 }
 

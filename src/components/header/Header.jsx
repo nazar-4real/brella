@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, useRef } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { ThemeContext } from 'src/context/ThemeContext';
@@ -39,7 +39,7 @@ const Header = ({ setModal }) => {
         >
           {linkText}
         </NavLinkThemed>
-      </li >
+      </li>
     )
   });
 
@@ -80,19 +80,18 @@ const Header = ({ setModal }) => {
               <span></span>
             </button>
           </ThemedNav>
-          <input
-            id="theme-switch"
-            type="checkbox"
-            defaultChecked={theme === 'dark'}
-          />
           <label
             className="theme-handler"
-            htmlFor="theme-switch"
-            onClick={() => switchTheme(theme === 'dark' ? 'light' : 'dark')}
             style={{
               borderColor: theme === 'dark' ? '#77c1a7' : '#43806c'
             }}
           >
+            <input
+              id="theme-switch"
+              type="checkbox"
+              defaultChecked={theme === 'dark'}
+              onChange={() => switchTheme(theme === 'dark' ? 'light' : 'dark')}
+            />
             <span className="theme-handler_lever"></span>
           </label>
           <div className="header__actions">

@@ -18,7 +18,13 @@ const Explore = () => {
       <div className="explore__picture" style={{
         backgroundColor: theme === 'dark' ? 'rgba(0, 0, 0, .6)' : ''
       }}>
-        <img className="explore__img" src={exploreImg} alt="" />
+        <img
+          className="explore__img"
+          src={exploreImg}
+          alt="Explore this topic"
+          style={{
+            filter: `brightness(${theme === 'dark' ? '.6' : 1})`
+          }} />
       </div>
       <SectionInfo
         className="explore__info"

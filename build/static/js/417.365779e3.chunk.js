@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkbrella=self.webpackChunkbrella||[]).push([[417],{417:function(a,s,l){l.r(s);var c=l(413),e=l(925),r=l(184),t=["className","src","alt"];s.default=function(a){var s=a.className,l=a.src,n=a.alt,u=(0,e.Z)(a,t);return(0,r.jsx)("img",(0,c.Z)({className:"lazy-img ".concat(s),src:l,alt:n},u))}}}]);
+//# sourceMappingURL=417.365779e3.chunk.js.map
